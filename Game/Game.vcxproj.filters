@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{ed0b04a6-fecd-4a2c-a462-59a8f4639f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Assets\modelData">
+      <UniqueIdentifier>{06086914-6aa4-4cad-9b07-6f9d357f04df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\sprite">
+      <UniqueIdentifier>{a6ce300a-b532-440d-b914-b4661d3015ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\shader">
+      <UniqueIdentifier>{a961ab0f-689c-4adf-940a-ffea33655653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\font">
+      <UniqueIdentifier>{9ce24419-5cae-4de8-84f5-336ce6bdb0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\animData">
+      <UniqueIdentifier>{8febfab2-0b65-4b9f-b760-6ce9f75f8996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\effect">
+      <UniqueIdentifier>{1c857c33-6d78-4b5b-816e-7ceb45a3e389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\effect\Texture">
+      <UniqueIdentifier>{8b31e80d-a444-4ef6-a616-be60a9d00e35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{f0d77ce2-c7e9-46d3-96e4-a0fb318d8ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Mikyan">
+      <UniqueIdentifier>{74272740-b4b2-4107-9884-2e87088f2bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Camera">
+      <UniqueIdentifier>{d084f3e3-d9e6-407c-9664-f5a9988e3695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Camera\Move">
+      <UniqueIdentifier>{3db862cf-c7fb-41ab-b129-8ccfccad84d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Background">
+      <UniqueIdentifier>{0ccc6eca-76d6-4836-bbb8-1554f62f0cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\NPC">
+      <UniqueIdentifier>{71de2a4f-ab5b-4487-b731-28e64ec8c86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\NPC\NormalAction">
+      <UniqueIdentifier>{4baaabd1-d1ef-4f6f-9c95-9b6651571236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\modelData\npc">
+      <UniqueIdentifier>{24a7f95b-215d-4eff-bcb5-90c8463ecdcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\locData">
+      <UniqueIdentifier>{59f5d939-07c9-4e81-8dac-f584eb1dbd2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Mikyan.cpp">
+      <Filter>Src\Mikyan</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>Src\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="AppCamera.cpp">
+      <Filter>Src\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AppCameraNormalMove.cpp">
+      <Filter>Src\Camera\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="IAppCameraMove.cpp">
+      <Filter>Src\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Sky.cpp">
+      <Filter>Src\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Npc.cpp">
+      <Filter>Src\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Idle.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="INpcNormalAction.cpp">
+      <Filter>Src\NPC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CLInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </CLInclude>
+    <ClInclude Include="Mikyan.h">
+      <Filter>Src\Mikyan</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>Src\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="AppCamera.h">
+      <Filter>Src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="AppCameraNormalMove.h">
+      <Filter>Src\Camera\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="IAppCameraMove.h">
+      <Filter>Src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Sky.h">
+      <Filter>Src\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Npc.h">
+      <Filter>Src\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Idle.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="INpcNormalAction.h">
+      <Filter>Src\NPC</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="Assets\modelData\unityChan.fbx">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\ground.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\sky.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\shader\tonemap.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\bloom.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\copy.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\fxaa.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\LightCulling.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\model.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\modelCB.h">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\modelSRV.h">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\modelStruct.h">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\sampleBRDF.h">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\sprite.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\LightingFunction.h">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\dithering.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\font\myfile.spritefont">
+      <Filter>Assets\font</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\shader\shadowBlur.fx">
+      <Filter>Assets\shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\test.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Burst01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Cloud01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Flame01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\LaserMain01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\LaserMain02.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle03.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle02.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_bokashi_hard.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_bokashi_soft.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_bokashistrong_hard.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_bokashistrong_soft.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_clear_hard.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Particle04_clear_soft.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Splash01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\SwordLine01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Thunder01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\Wind01.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Texture\wind02.png">
+      <Filter>Assets\effect\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\test.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\modelData\unityChan.tks">
+      <Filter>Assets\modelData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\locData\npcLoc.tks">
+      <Filter>Assets\locData</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageContentTask Include="Assets\sprite\dummy.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+  </ItemGroup>
+</Project>
