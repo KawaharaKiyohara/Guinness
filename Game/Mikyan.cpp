@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Mikyan.h"
 #include "Game.h"
+#include "Npc.h"
 
 Mikyan::Mikyan()
 {
@@ -26,10 +27,31 @@ bool Mikyan::Start()
 void Mikyan::OnCountUp()
 {
 	m_moveTargetPosition.x -= 200.0f;
+	//みきゃんに一番近いNPCをみきゃんの後ろに移動させる。
+	Npc* nearNpc = nullptr;
+	float dist = FLT_MAX;
+	QueryGOs<Npc>("Npc", [&](auto npc)->bool {
+		if (npc->IsPossibleChangeStateFollow()) {
+			//追尾状態に遷移できる？
+			//npcとの距離を測定する。
+			CVector3 vDist = npc->m_position - position;
+			float tmp = vDist.Length();
+			if (tmp < dist) {
+				//こちらの方が近い。
+				dist = tmp;
+				nearNpc = npc;
+			}
+		}
+		return true;
+	});
+
+	if (nearNpc != nullptr) {
+		nearNpc->ChangeStateFollow();
+	}
 }
 void Mikyan::Update()
 {
-	const auto csMoveSpeed = 4.0f;
+	const auto csMoveSpeed = 6.0f;
 	CVector3 moveSpeed = m_moveTargetPosition - position;
 	if (moveSpeed.Length() > csMoveSpeed) {
 		//移動しろ。

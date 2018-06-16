@@ -57,7 +57,7 @@ void Game::InitNpc()
 	locData.Load(L"locData/npcLoc.tks");
 	//配置されているオブジェクトに対してクエリを行う。
 	locData.QueryLocObject([&](const auto& objData) {
-		auto npc = NewGO<Npc>(0);
+		auto npc = NewGO<Npc>(0, "Npc");
 		npc->Init(objData);
 	});
 	

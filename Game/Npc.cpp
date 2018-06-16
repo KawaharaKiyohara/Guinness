@@ -5,6 +5,7 @@
 #include "NpcNormalAction_LR.h"
 #include "NpcNormalAction_Guruguru.h"
 #include "NpcNomalActionManzi.h"
+#include "Mikyan.h"
 
 Npc::Npc()
 {
@@ -56,10 +57,24 @@ void Npc::InitNormalAction(const wchar_t* normalActionName)
 	//    各種アクションを作っていってください。
 	//仕様は
 }
+void Npc::ChangeStateFollow()
+{
+	//みきゃんに追尾する状態に遷移する。
+	m_mikyan = FindGO<Mikyan>("みきゃん");
+	m_state = enState_Follow;
+}
 void Npc::Update()
 {
-	if (m_normalAction != nullptr) {
-		m_normalAction->Action();
+	switch (m_state) {
+	case enState_Normal:
+		//通常状態。
+		if (m_normalAction != nullptr) {
+			m_normalAction->Action();
+		}
+		break;
+	case enState_Follow:
+		//追尾状態。
+		break;
 	}
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
