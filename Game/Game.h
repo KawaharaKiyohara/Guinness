@@ -9,7 +9,7 @@ class Ground;
 class Sky;
 class Npc;
 class Counter;
-
+class NpcRender;
 class Game : public IGameObject
 {
 private:
@@ -29,6 +29,8 @@ public:
 	std::vector<Npc*> m_npc;		//NPC;
 	Counter* m_counter = nullptr;	//カウンター。
 	std::vector<OnCountUp> m_countUpListener;		//カウントアップのリスナー。
+	prefab::CSoundSource* m_bgm = nullptr;
+	std::vector<NpcRender*> m_npcRenderList;
 	
 };
 

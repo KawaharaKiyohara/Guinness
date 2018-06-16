@@ -7,7 +7,7 @@
 #include "Npc.h"
 #include "tkEngine/light/tkDirectionLight.h"
 #include "Counter.h"
-
+#include "NpcRender.h"
 Game::Game()
 {
 }
@@ -24,6 +24,10 @@ Game::~Game()
 		DeleteGO(npc);
 	}
 	DeleteGO(m_counter);
+	DeleteGO(m_bgm);
+	for (auto& npcRender : m_npcRenderList) {
+		DeleteGO(npcRender);
+	}
 }
 //ライトの初期化。
 void Game::InitLight()
@@ -48,6 +52,10 @@ void Game::InitLight()
 	m_lights.push_back(lig);
 
 	GraphicsEngine().GetShadowMap().SetLightDirection(lightDir);
+
+	m_bgm = NewGO<prefab::CSoundSource>(0);
+	m_bgm->Init("sound/bgm.wav");
+	m_bgm->Play(true);
 }
 //NPCを初期化。
 void Game::InitNpc()
@@ -56,10 +64,36 @@ void Game::InitNpc()
 	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
 	//配置されているオブジェクトに対してクエリを行う。
+	using NpcRenderPair = std::pair<NpcRender*, int>;
+	std::map<std::wstring, NpcRenderPair> npcMap;
 	locData.QueryLocObject([&](const auto& objData) {
 		auto npc = NewGO<Npc>(0, "Npc");
 		npc->Init(objData);
+		m_npc.push_back(npc);
+		wchar_t modelName[256], normalActionName[256];
+		swscanf(objData.name, L"%ls %ls", modelName, normalActionName);
+		wchar_t modelFullPath[256];
+		swprintf(modelFullPath, L"modelData/%ls.cmo", modelName);
+		auto it = npcMap.find(modelFullPath);
+		if (it == npcMap.end()) {
+			//新規
+			NpcRender* npcRender = NewGO<NpcRender>(0);
+			npc->m_npcRender = npcRender;
+			npcMap.insert({ modelFullPath, { npcRender, 1 } });
+		}
+		else {
+			//重複。
+			it->second.second++;
+			npc->m_npcRender = it->second.first;
+		}
 	});
+	//NPCレンダラーを初期化する。
+	for (auto npcRenderPair : npcMap) {
+		const std::wstring& modelPath = npcRenderPair.first;
+		auto numInstance = npcRenderPair.second.second;
+		
+		npcRenderPair.second.first->Init(numInstance, modelPath.c_str());
+	}
 	
 }
 bool Game::Start()

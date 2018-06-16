@@ -9,6 +9,7 @@
 #include "NpcNormalAction_Urouro.h"
 #include "NpcNomalAction_JP.h"
 #include"NpcNormalActionLoop.h"
+#include "NpcRender.h"
 
 Npc::Npc()
 {
@@ -24,17 +25,10 @@ void Npc::Init(const CLocData::SObjectData& locObjData)
 	//配置されているオブジェクト名からロードするモデル名を抽出
 	wchar_t modelName[256], normalActionName[256];
 	swscanf(locObjData.name, L"%ls %ls", modelName, normalActionName);
-	wchar_t modelFullPath[256];
-	swprintf(modelFullPath, L"modelData/%ls.cmo", modelName);
-	//スキンモデルレンダラーを作成。
-	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	m_skinModelRender->Init(modelFullPath);
-	
+
 	m_position = locObjData.position;
 	m_rotation = locObjData.rotation;
-	//セルフシャドウをオンにする。
-	m_skinModelRender->SetShadowCasterFlag(true);
-	m_skinModelRender->SetShadowReceiverFlag(true);
+	
 
 	InitNormalAction(normalActionName);
 }
@@ -74,7 +68,9 @@ void Npc::InitNormalAction(const wchar_t* normalActionName)
 void Npc::ChangeStateFollow()
 {
 	//みきゃんに追尾する状態に遷移する。
+	//追尾座標を取得。
 	m_mikyan = FindGO<Mikyan>("みきゃん");
+	m_mikyan->AddFolloNpcListAndGetPositionInMikyan(m_offsetPos, this);
 	m_state = enState_Follow;
 }
 void Npc::Update()
@@ -88,10 +84,25 @@ void Npc::Update()
 		break;
 	case enState_Follow:
 		//追尾状態。
+		OnStateFollow();
 		break;
 	}
-	m_skinModelRender->SetPosition(m_position);
-	m_skinModelRender->SetRotation(m_rotation);
+	m_npcRender->UpdateWorldMatrix(m_position, m_rotation);
+}
+void Npc::OnStateFollow()
+{
+	CVector3 targetPos = m_mikyan->position + m_offsetPos;
+	if (m_position.x > targetPos.x) {
+		//追尾。
+		CVector3 moveDir = targetPos - m_position;
+		moveDir.Normalize();
+		//距離に比例して移動速を上げる。
+		CVector3 moveSpeed = moveDir * 250.0f * pow(fabsf(targetPos.x - m_position.x) * 0.005f, 2.0f) * GameTime().GetFrameDeltaTime();
+		m_position += moveSpeed;
+		
+	}
+	CVector3 dir = m_mikyan->position - m_position;
+	m_rotation.SetRotation(CVector3::AxisY, -atan2f(dir.z, dir.x) - CMath::PI * 0.5f);
 }
 bool Npc::Start()
 {

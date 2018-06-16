@@ -56,6 +56,9 @@
     <Filter Include="Assets\locData">
       <UniqueIdentifier>{59f5d939-07c9-4e81-8dac-f584eb1dbd2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\sound">
+      <UniqueIdentifier>{b3c4e3fe-ee32-4fa5-a493-549da40fc698}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mikyan.cpp">
@@ -110,6 +113,12 @@
     </ClCompile>
     <ClCompile Include="NpcNomalAction_JP.cpp">
       <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowData.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcRender.cpp">
+      <Filter>Src\NPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +176,12 @@
     </ClInclude>
     <ClInclude Include="NpcNomalAction_JP.h">
       <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowData.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcRender.h">
+      <Filter>Src\NPC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -309,10 +324,18 @@
     <CustomBuild Include="Assets\locData\npcLoc.tks">
       <Filter>Assets\locData</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\bgm.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\sound\touch_00.wav">
+      <Filter>Assets\sound</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -3,6 +3,9 @@
 #include "Game.h"
 #include "Npc.h"
 
+namespace {
+	const float MIKYAN_RADIUS = 40.0f;	//みきゃんの半径。
+}
 Mikyan::Mikyan()
 {
 }
@@ -22,10 +25,17 @@ bool Mikyan::Start()
 	game->m_countUpListener.push_back([&]() {
 		OnCountUp();
 	});
+
+	
 	return true;
 }
 void Mikyan::OnCountUp()
 {
+	prefab::CSoundSource* ss = NewGO<prefab::CSoundSource>(0);
+	
+	ss->Init("sound/touch_00.wav");
+	ss->Play(false);
+
 	m_moveTargetPosition.x -= 200.0f;
 	//みきゃんに一番近いNPCをみきゃんの後ろに移動させる。
 	Npc* nearNpc = nullptr;
@@ -49,9 +59,38 @@ void Mikyan::OnCountUp()
 		nearNpc->ChangeStateFollow();
 	}
 }
+bool Mikyan::InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc)
+{
+	//追尾可能データが存在するか調べる。
+	for (int i = 0; i < FollowData::MAX_FOLLOW; i++) {
+
+		if (followData.m_npc[i] == nullptr) {
+			//追尾可能。
+			followData.m_npc[i] = npc;
+			offsetPos += followData.offsetPos[i];
+			return true;
+		}
+	}
+	//見つからなかった場合は再帰的に調べていく。
+	int t = rand() % 3;
+	
+	CVector3 offsetPosLocal = offsetPos + followData.offsetPos[t];
+	if (InnerAddFolloNpcListAndGetPositionInMikyan(offsetPosLocal, followData.m_npc[t]->m_followData, npc) == true) {
+		offsetPos = offsetPosLocal;
+		return true;
+	}
+	
+	return false;
+}
+//追尾するNPCをリストに登録して、NPCが追尾する目標となるみきゃん座標系の座標を取得する。
+void Mikyan::AddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, Npc* npc)
+{
+	offsetPos = CVector3::Zero;
+	InnerAddFolloNpcListAndGetPositionInMikyan(offsetPos, m_followData, npc);	
+}
 void Mikyan::Update()
 {
-	const auto csMoveSpeed = 6.0f;
+	const auto csMoveSpeed = 300.0f * GameTime().GetFrameDeltaTime();
 	CVector3 moveSpeed = m_moveTargetPosition - position;
 	if (moveSpeed.Length() > csMoveSpeed) {
 		//移動しろ。

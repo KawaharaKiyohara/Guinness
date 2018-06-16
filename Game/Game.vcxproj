@@ -620,6 +620,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="FollowData.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAppCameraMove.cpp" />
@@ -636,6 +637,7 @@
     <ClCompile Include="Npc.cpp" />
     <ClCompile Include="NpcNormalAction_LR.cpp" />
     <ClCompile Include="NpcNormalAction_Urouro.cpp" />
+    <ClCompile Include="NpcRender.cpp" />
     <ClCompile Include="Sky.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -653,6 +655,7 @@
     <CustomBuild Include="Assets\shader\modelStruct.h" />
     <CustomBuild Include="Assets\shader\sampleBRDF.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="FollowData.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IAppCameraMove.h" />
@@ -668,6 +671,7 @@
     <ClInclude Include="Npc.h" />
     <ClInclude Include="NpcNormalAction_LR.h" />
     <ClInclude Include="NpcNormalAction_Urouro.h" />
+    <ClInclude Include="NpcRender.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Sky.h" />
     <ClInclude Include="stdafx.h" />
@@ -760,6 +764,16 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\locData\npcLoc.tks">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\bgm.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\touch_00.wav">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
