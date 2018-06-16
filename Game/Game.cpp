@@ -112,7 +112,7 @@ bool Game::Start()
 }
 void Game::Update()
 {
-	if (Pad(0).IsTrigger(enButtonRight) == true) {
+	if (Pad(0).IsPress(enButtonRight) == true) {
 		for (auto& listener : m_countUpListener) {
 			listener();
 		}

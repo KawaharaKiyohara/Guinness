@@ -92,15 +92,15 @@ void Npc::Update()
 void Npc::OnStateFollow()
 {
 	CVector3 targetPos = m_mikyan->position + m_offsetPos;
-	if (m_position.x > targetPos.x) {
+	//if (m_position.x > targetPos.x) {
 		//’Ç”öB
 		CVector3 moveDir = targetPos - m_position;
 		moveDir.Normalize();
 		//‹——£‚É”ä—á‚µ‚ÄˆÚ“®‘¬‚ðã‚°‚éB
-		CVector3 moveSpeed = moveDir * 250.0f * pow(fabsf(targetPos.x - m_position.x) * 0.005f, 2.0f) * GameTime().GetFrameDeltaTime();
+		CVector3 moveSpeed = moveDir * 250.0f * min( 2.0f, pow(fabsf(targetPos.x - m_position.x) * 0.005f, 2.0f) * GameTime().GetFrameDeltaTime() );
 		m_position += moveSpeed;
 		
-	}
+//	}
 	CVector3 dir = m_mikyan->position - m_position;
 	m_rotation.SetRotation(CVector3::AxisY, -atan2f(dir.z, dir.x) - CMath::PI * 0.5f);
 }
