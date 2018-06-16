@@ -18,6 +18,5 @@ public:
 	CVector3 m_position = CVector3::Zero;				//À•WB
 	CQuaternion m_rotation = CQuaternion::Identity;		//‰ñ“]B
 
-	
 };
 
