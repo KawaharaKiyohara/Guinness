@@ -619,6 +619,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Counter.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAppCameraMove.cpp" />
@@ -628,9 +629,12 @@
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="NpcNomalActionManzi.cpp" />
+    <ClCompile Include="NpcNomalAction_JP.cpp" />
+    <ClCompile Include="NpcNormalActionLoop.cpp" />
     <ClCompile Include="NpcNormalAction_Guruguru.cpp" />
     <ClCompile Include="NpcNormalAction_Idle.cpp" />
     <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcNormalAction_LR.cpp" />
     <ClCompile Include="NpcNormalAction_Urouro.cpp" />
     <ClCompile Include="Sky.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -648,6 +652,7 @@
     <CustomBuild Include="Assets\shader\modelSRV.h" />
     <CustomBuild Include="Assets\shader\modelStruct.h" />
     <CustomBuild Include="Assets\shader\sampleBRDF.h" />
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IAppCameraMove.h" />
@@ -656,9 +661,12 @@
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="NpcNomalActionManzi.h" />
+    <ClInclude Include="NpcNomalAction_JP.h" />
+    <ClInclude Include="NpcNormalActionLoop.h" />
     <ClInclude Include="NpcNormalAction_Guruguru.h" />
     <ClInclude Include="NpcNormalAction_Idle.h" />
     <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcNormalAction_LR.h" />
     <ClInclude Include="NpcNormalAction_Urouro.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Sky.h" />
@@ -667,6 +675,7 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
+    <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\sky.FBX" />

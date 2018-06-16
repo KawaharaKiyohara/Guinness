@@ -13,7 +13,6 @@ NpcNomalActionManzi::~NpcNomalActionManzi()
 }
 
 void NpcNomalActionManzi::Action()
-
 {
 	m_npc->m_position.z += 2.0f * m_moveDir;
 	/*if (Pad(0).IsTrigger(enButtonA)) {

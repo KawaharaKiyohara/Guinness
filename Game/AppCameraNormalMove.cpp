@@ -20,7 +20,7 @@ void AppCameraNormalMove::Move()
 {
 	//‚Ý‚«‚á‚ñ‚É’Ç]B
 	CVector3 target = m_mikyan->position;
-	target.y += 150.0f;
+	target.y += 250.0f;
 	m_appCamera->m_springCamera.SetTarget(target);
 	CVector3 pos = target;
 	pos.y += 100.0f;
