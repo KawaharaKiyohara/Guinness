@@ -5,7 +5,7 @@
 class NpcNormalAction_Idle : public INpcNormalAction
 {
 public:
-	NpcNormalAction_Idle( Npc* npc );
+	NpcNormalAction_Idle(Npc* npc);
 	~NpcNormalAction_Idle();
 	void Action();
 };
