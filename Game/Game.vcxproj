@@ -629,6 +629,7 @@
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="NpcNormalAction_Idle.cpp" />
     <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcNormalAction_LR.cpp" />
     <ClCompile Include="Sky.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -654,6 +655,7 @@
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="NpcNormalAction_Idle.h" />
     <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcNormalAction_LR.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Sky.h" />
     <ClInclude Include="stdafx.h" />

@@ -90,6 +90,9 @@
     <ClCompile Include="INpcNormalAction.cpp">
       <Filter>Src\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNormalAction_LR.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -125,6 +128,9 @@
     </ClInclude>
     <ClInclude Include="INpcNormalAction.h">
       <Filter>Src\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_LR.h">
+      <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
