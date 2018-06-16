@@ -6,6 +6,7 @@
 #include "Sky.h"
 #include "Npc.h"
 #include "tkEngine/light/tkDirectionLight.h"
+#include "Counter.h"
 
 Game::Game()
 {
@@ -22,6 +23,7 @@ Game::~Game()
 	for (auto npc : m_npc) {
 		DeleteGO(npc);
 	}
+	DeleteGO(m_counter);
 }
 //ライトの初期化。
 void Game::InitLight()
@@ -66,7 +68,8 @@ bool Game::Start()
 	m_camera = NewGO<AppCamera>(0);
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
-	
+	m_counter = NewGO<Counter>(0);
+
 	//ライトの初期化。
 	InitLight();
 	//NPCの初期化。
@@ -75,4 +78,9 @@ bool Game::Start()
 }
 void Game::Update()
 {
+	if (Pad(0).IsTrigger(enButtonRight) == true) {
+		for (auto& listener : m_countUpListener) {
+			listener();
+		}
+	}
 }

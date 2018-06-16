@@ -90,6 +90,18 @@
     <ClCompile Include="INpcNormalAction.cpp">
       <Filter>Src\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="Counter.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_LR.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Guruguru.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Urouro.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
     <ClCompile Include="NpcNomalActionManzi.cpp">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClCompile>
@@ -132,7 +144,19 @@
     <ClInclude Include="INpcNormalAction.h">
       <Filter>Src\NPC</Filter>
     </ClInclude>
+    <ClInclude Include="Counter.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_LR.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
     <ClInclude Include="NpcNomalActionManzi.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Guruguru.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Urouro.h">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
     <ClInclude Include="NpcNormalActionLoop.h">
@@ -159,6 +183,9 @@
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX">
       <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\mikyan.FBX">
+      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
