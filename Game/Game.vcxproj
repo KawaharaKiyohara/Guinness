@@ -627,8 +627,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
+    <ClCompile Include="NpcNormalAction_Guruguru.cpp" />
     <ClCompile Include="NpcNormalAction_Idle.cpp" />
     <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcNormalAction_Urouro.cpp" />
     <ClCompile Include="Sky.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -652,8 +654,10 @@
     <ClInclude Include="INpcNormalAction.h" />
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
+    <ClInclude Include="NpcNormalAction_Guruguru.h" />
     <ClInclude Include="NpcNormalAction_Idle.h" />
     <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcNormalAction_Urouro.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Sky.h" />
     <ClInclude Include="stdafx.h" />

@@ -90,6 +90,12 @@
     <ClCompile Include="INpcNormalAction.cpp">
       <Filter>Src\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNormalAction_Guruguru.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Urouro.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -125,6 +131,12 @@
     </ClInclude>
     <ClInclude Include="INpcNormalAction.h">
       <Filter>Src\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Guruguru.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Urouro.h">
+      <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
