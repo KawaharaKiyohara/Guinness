@@ -6,6 +6,8 @@
 #include "NpcNormalAction_Guruguru.h"
 #include "NpcNomalActionManzi.h"
 #include "NpcNomalAction_JP.h"
+#include"NpcNormalActionLoop.h"
+
 
 Npc::Npc()
 {
@@ -56,6 +58,10 @@ void Npc::InitNormalAction(const wchar_t* normalActionName)
 	else if (wcsncmp(normalActionName, L"JP", 2) == 0) {
 
 		m_normalAction = new NpcNomalAction_JP(this);
+	}
+	else if (wcsncmp(normalActionName, L"Loop", 4) == 0) {
+		//待機アクション。
+		m_normalAction = new NpcNormalActionLoop(this);
 	}
 	//for 中村君、佐伯君、平野君。待機アクションの作成の仕方を参考に
 	//    各種アクションを作っていってください。
