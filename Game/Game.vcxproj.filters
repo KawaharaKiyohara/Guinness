@@ -93,6 +93,18 @@
     <ClCompile Include="Counter.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNormalAction_LR.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Guruguru.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNormalAction_Urouro.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNomalActionManzi.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -131,6 +143,18 @@
     </ClInclude>
     <ClInclude Include="Counter.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_LR.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNomalActionManzi.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Guruguru.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalAction_Urouro.h">
+      <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

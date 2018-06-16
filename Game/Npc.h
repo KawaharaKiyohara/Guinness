@@ -17,7 +17,6 @@ public:
 	INpcNormalAction* m_normalAction = nullptr;			//通常アクション。
 	CVector3 m_position = CVector3::Zero;				//座標。
 	CQuaternion m_rotation = CQuaternion::Identity;		//回転。
-
 	
 };
 

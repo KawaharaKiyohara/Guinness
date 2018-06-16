@@ -16,5 +16,5 @@ NpcNormalAction_Idle::~NpcNormalAction_Idle()
 void NpcNormalAction_Idle::Action()
 {
 	//‰½‚à‚µ‚È‚¢‚ºB
-	
+	//m_npc->m_position.x += 1.0f; 
 }
