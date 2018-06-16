@@ -629,6 +629,8 @@
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="NpcNomalActionManzi.cpp" />
+    <ClCompile Include="NpcNomalAction_JP.cpp" />
+    <ClCompile Include="NpcNormalActionLoop.cpp" />
     <ClCompile Include="NpcNormalAction_Guruguru.cpp" />
     <ClCompile Include="NpcNormalAction_Idle.cpp" />
     <ClCompile Include="Npc.cpp" />
@@ -659,6 +661,8 @@
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="NpcNomalActionManzi.h" />
+    <ClInclude Include="NpcNomalAction_JP.h" />
+    <ClInclude Include="NpcNormalActionLoop.h" />
     <ClInclude Include="NpcNormalAction_Guruguru.h" />
     <ClInclude Include="NpcNormalAction_Idle.h" />
     <ClInclude Include="Npc.h" />

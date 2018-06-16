@@ -105,6 +105,12 @@
     <ClCompile Include="NpcNomalActionManzi.cpp">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNormalActionLoop.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcNomalAction_JP.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -154,6 +160,12 @@
       <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
     <ClInclude Include="NpcNormalAction_Urouro.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNormalActionLoop.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcNomalAction_JP.h">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
   </ItemGroup>
