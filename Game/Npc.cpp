@@ -2,7 +2,7 @@
 #include "Npc.h"
 #include "INpcNormalAction.h"
 #include "NpcNormalAction_Idle.h"
-
+#include "NpcNomalActionManzi.h"
 Npc::Npc()
 {
 }
@@ -38,6 +38,11 @@ void Npc::InitNormalAction(const wchar_t* normalActionName)
 		//待機アクション。
 		m_normalAction = new NpcNormalAction_Idle(this);
 	}
+	else if (wcsncmp(normalActionName, L"Manzi", 5) == 0) {
+		//待機アクション。
+		m_normalAction = new NpcNomalActionManzi(this);
+	}
+
 	//for 中村君、佐伯君、平野君。待機アクションの作成の仕方を参考に
 	//    各種アクションを作っていってください。
 	//仕様は

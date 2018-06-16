@@ -627,6 +627,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
+    <ClCompile Include="NpcNomalActionManzi.cpp" />
     <ClCompile Include="NpcNormalAction_Idle.cpp" />
     <ClCompile Include="Npc.cpp" />
     <ClCompile Include="Sky.cpp" />
@@ -652,6 +653,7 @@
     <ClInclude Include="INpcNormalAction.h" />
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
+    <ClInclude Include="NpcNomalActionManzi.h" />
     <ClInclude Include="NpcNormalAction_Idle.h" />
     <ClInclude Include="Npc.h" />
     <CLInclude Include="resource.h" />
