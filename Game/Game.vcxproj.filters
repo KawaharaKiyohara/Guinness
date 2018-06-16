@@ -90,6 +90,9 @@
     <ClCompile Include="INpcNormalAction.cpp">
       <Filter>Src\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="Counter.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -126,6 +129,9 @@
     <ClInclude Include="INpcNormalAction.h">
       <Filter>Src\NPC</Filter>
     </ClInclude>
+    <ClInclude Include="Counter.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -147,6 +153,9 @@
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX">
       <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\mikyan.FBX">
+      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
   <ItemGroup>

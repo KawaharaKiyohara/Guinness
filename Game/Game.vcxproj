@@ -619,6 +619,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Counter.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAppCameraMove.cpp" />
@@ -645,6 +646,7 @@
     <CustomBuild Include="Assets\shader\modelSRV.h" />
     <CustomBuild Include="Assets\shader\modelStruct.h" />
     <CustomBuild Include="Assets\shader\sampleBRDF.h" />
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IAppCameraMove.h" />
@@ -661,6 +663,7 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
+    <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\sky.FBX" />
