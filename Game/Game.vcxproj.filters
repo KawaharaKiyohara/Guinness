@@ -105,6 +105,7 @@
     <ClCompile Include="NpcNomalActionManzi.cpp">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNomalAction_JP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -156,6 +157,7 @@
     <ClInclude Include="NpcNormalAction_Urouro.h">
       <Filter>Src\NPC\NormalAction</Filter>
     </ClInclude>
+    <ClInclude Include="NpcNomalAction_JP.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">

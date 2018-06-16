@@ -26,12 +26,6 @@ void NpcNormalAction_LR::Action()
 	else if (m_npc->m_position.x - m_initPosition.x < -100) {
 		m_moveDir *= -1;
 	}
-	/*	if (m_position.x - m_initPosition.x < 5) {
-		m_npc->m_position.x += 2.0f;
-	}
-		else if(m_position.x - m_initPosition.x > 5){
-		m_npc->m_position.x -= 2.0f;
-	}*/
 
 }
 
