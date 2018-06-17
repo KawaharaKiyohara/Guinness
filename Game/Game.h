@@ -16,7 +16,8 @@ private:
 	void InitLight();
 	void InitNpc();
 public:
-	
+	enum EnEvent {
+	};
 	using OnCountUp = std::function<void(int count)>;
 	Game();
 	~Game();
