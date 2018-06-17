@@ -628,6 +628,7 @@
     <ClCompile Include="AppCameraNormalMove.cpp" />
     <ClCompile Include="INpcNormalAction.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapChip.cpp" />
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="NpcNomalActionManzi.cpp" />
@@ -663,6 +664,7 @@
     <ClInclude Include="IAppCameraMove.h" />
     <ClInclude Include="AppCameraNormalMove.h" />
     <ClInclude Include="INpcNormalAction.h" />
+    <ClInclude Include="MapChip.h" />
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="NpcNomalActionManzi.h" />
@@ -805,6 +807,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\locData\mapLoc.tks" />
     <None Include="Assets\modelData\npc\cowboy_T.FBX.max" />
     <None Include="Assets\modelData\npc\man-casual_T.FBX.max" />
     <None Include="Assets\modelData\npc\man-knight_T.FBX.max" />

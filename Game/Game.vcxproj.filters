@@ -126,6 +126,9 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="MapChip.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -191,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="MapChip.h">
+      <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +427,9 @@
     </None>
     <None Include="Assets\modelData\npc\man-knight_T.FBX.max">
       <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\locData\mapLoc.tks">
+      <Filter>Assets\locData</Filter>
     </None>
   </ItemGroup>
 </Project>
