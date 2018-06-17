@@ -25,7 +25,7 @@ public:
 	CQuaternion rotation = CQuaternion::Identity;	//âÒì]ÅB
 	FollowData m_followData;
 private:
-	bool InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc);
+	bool InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc, int );
 	
 };
 

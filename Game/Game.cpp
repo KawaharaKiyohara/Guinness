@@ -112,9 +112,14 @@ bool Game::Start()
 }
 void Game::Update()
 {
+#if BUILD_LEVEL != BUILD_LEVEL_MASTER
 	if (Pad(0).IsPress(enButtonRight) == true) {
+#else
+	//マスタービルドでは、キー押しっぱなしではカウントできないようにする。
+	if (Pad(0).IsTrigger(enButtonRight) == true) {
+#endif
 		for (auto& listener : m_countUpListener) {
-			listener();
+			listener(m_counter->GetCount() + 1);
 		}
 	}
 }
