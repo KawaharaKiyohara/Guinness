@@ -681,6 +681,11 @@
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\sky.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
