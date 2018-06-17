@@ -620,6 +620,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="EffectManager.cpp" />
     <ClCompile Include="EffectPlay.cpp" />
     <ClCompile Include="FollowData.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -656,6 +657,7 @@
     <CustomBuild Include="Assets\shader\modelStruct.h" />
     <CustomBuild Include="Assets\shader\sampleBRDF.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="EffectManager.h" />
     <ClInclude Include="EffectPlay.h" />
     <ClInclude Include="FollowData.h" />
     <ClInclude Include="Game.h" />
@@ -781,6 +783,14 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\effect\hanabi.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\hanabiDown.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiUp.efk">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

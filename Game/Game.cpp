@@ -8,6 +8,7 @@
 #include "tkEngine/light/tkDirectionLight.h"
 #include "Counter.h"
 #include "NpcRender.h"
+#include "EffectManager.h"
 Game::Game()
 {
 }
@@ -102,6 +103,7 @@ bool Game::Start()
 	m_camera = NewGO<AppCamera>(0);
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
+	m_EffectManager = NewGO<EffectManager>(0);
 	m_counter = NewGO<Counter>(0);
 
 	//ƒ‰ƒCƒg‚Ì‰Šú‰»B

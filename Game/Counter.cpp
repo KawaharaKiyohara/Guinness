@@ -27,8 +27,6 @@ void Counter::OnCountup()
 {
 	m_count++;
 
-	NewGO<EffectPlay>(0);
-
 }
 void Counter::PostRender(CRenderContext& rc)
 {

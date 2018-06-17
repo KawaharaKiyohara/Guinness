@@ -126,6 +126,9 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>Src\Effect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -190,6 +193,9 @@
       <Filter>Src\NPC</Filter>
     </ClInclude>
     <ClInclude Include="EffectPlay.h">
+      <Filter>Src\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
   </ItemGroup>
@@ -338,6 +344,12 @@
     </CustomBuild>
     <CustomBuild Include="Assets\sound\touch_00.wav" />
     <CustomBuild Include="Assets\effect\hanabi.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiDown.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiUp.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>

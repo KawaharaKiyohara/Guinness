@@ -10,6 +10,7 @@ class Sky;
 class Npc;
 class Counter;
 class NpcRender;
+class EffectManager;
 class Game : public IGameObject
 {
 private:
@@ -34,6 +35,7 @@ public:
 	std::vector<prefab::CDirectionLight*> m_lights;	//ｌｉｇｈｔ。
 	std::vector<Npc*> m_npc;		//NPC;
 	Counter* m_counter = nullptr;	//カウンター。
+	EffectManager* m_EffectManager = nullptr;			//空。
 	std::vector<OnCountUp> m_countUpListener;		//カウントアップのリスナー。
 	prefab::CSoundSource* m_bgm = nullptr;
 	std::vector<NpcRender*> m_npcRenderList;
