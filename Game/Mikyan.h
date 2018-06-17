@@ -24,6 +24,7 @@ public:
 	CVector3 m_moveTargetPosition = CVector3::Zero;	//ターゲット座標。
 	CQuaternion rotation = CQuaternion::Identity;	//回転。
 	FollowData m_followData;
+	float m_updownSinKind = 0.0f;					//上下移動で使うサインカーブの種。sin関数に渡します。
 private:
 	bool InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc, int );
 	

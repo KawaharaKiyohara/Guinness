@@ -36,7 +36,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 	initParam.graphicsConfing.bloomConfig.isEnable = true;
 	//tonemap
 	initParam.graphicsConfing.tonemapConfig.isEnable = true;
-	initParam.graphicsConfing.tonemapConfig.luminance = 0.64f;
+	initParam.graphicsConfing.tonemapConfig.luminance = 0.54f;
 	//ÉfÉBÉU
 	//initParam.graphicsConfing.ditheringConfig.isEnable = true;
 	

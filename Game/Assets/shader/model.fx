@@ -407,7 +407,7 @@ float4 PSMain( PSInput In ) : SV_Target0
 		toEyeDir,
 		toEyeReflection, 
 		roughness,
-		specPow
+		0.0f
 	);
     
 	//アンビエントライト。
@@ -437,7 +437,52 @@ float4 PSMain( PSInput In ) : SV_Target0
     return float4(finalColor, 1.0f); 
 #endif
 }
-
+float4 PSMainSky( PSInput In ) : SV_Target0
+{
+	//視点までのベクトルを求める。
+	float3 toEye = normalize(eyePos - In.Pos);
+	//従ベクトルを計算する。
+	float3 biNormal = normalize(cross(In.Tangent, In.Normal));
+	//アルベド。
+	float4 albedo = float4(albedoTexture.Sample(Sampler, In.TexCoord).xyz, 1.0f);
+	//法線を計算。
+	float3 normal = CalcNormal( In.Normal, biNormal, In.Tangent, In.TexCoord);
+		
+	float specPow = 0.0f;
+	float roughness = 1.0f;
+	
+	float toEyeLen = length(toEye);
+	float3 toEyeDir = float3(1.0f, 0.0f, 0.0f);
+	if(toEyeLen > 0.001f){
+		toEyeDir = toEye / toEyeLen;
+	}
+	float3 finalColor = 0.0f;
+	//アンビエントライト。
+	finalColor += CalcAmbientLight(
+		albedo,
+		normal,
+		In.Tangent,
+		biNormal,
+		toEyeDir,
+		1.0f,
+		0.0f
+	);
+	
+	// brightness
+	float brightness = 1.0f;
+    finalColor *= brightness;
+/*
+    // exposure
+    float exposure = 1.0f;
+    finalColor *= pow( 2.0, exposure );
+  */  
+    float gamma = 2.2f;
+    finalColor = max( 0.0f, pow( finalColor, 1.0 / gamma ) );
+    if(isnan(finalColor.x) || isnan(finalColor.y) || isnan(finalColor.z)){
+		return float4(1.0f, 0.0f, 0.0f, 1.0f);
+	}
+    return float4(finalColor, 1.0f); 
+}
 
 /*!
  *@brief	Z値を書き込むためだけの描画パスで使用されるピクセルシェーダー。

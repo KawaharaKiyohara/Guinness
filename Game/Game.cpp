@@ -36,20 +36,21 @@ void Game::InitLight()
 	auto lightDir = CVector3(1, -1, -1);
 	lightDir.Normalize();
 	lig->SetDirection(lightDir);
-	lig->SetColor({ 10.2f, 10.2f, 10.2f, 1.0f });
+	lig->SetColor({ 0.8f, 0.8f, 0.8f, 1.0f });
 	m_lights.push_back(lig);
 
 	lig = NewGO<prefab::CDirectionLight>(0);
-	lig->SetColor({ 1.2f, 1.2f, 1.2f, 1.0f });
+	lig->SetColor({ 0.3f, 0.3f, 0.3f, 1.0f });
 	lig->SetDirection({ -1.0f, 0.0f, 0.0f });
 	m_lights.push_back(lig);
 
 	lig = NewGO<prefab::CDirectionLight>(0);
-	lig->SetColor({ 1.2f, 1.2f, 1.2f, 1.0f });
+	lig->SetColor({ 0.3f, 0.3f, 0.3f, 1.0f });
 	lightDir.Set(1.0f, -1.0f, -1.0f);
 	lightDir.Normalize();
 	lig->SetDirection(lightDir);
 	m_lights.push_back(lig);
+	LightManager().SetAmbientLight({ 0.6f, 0.6f, 0.6f });
 
 	GraphicsEngine().GetShadowMap().SetLightDirection(lightDir);
 
@@ -108,6 +109,7 @@ bool Game::Start()
 	InitLight();
 	//NPCÇÃèâä˙âªÅB
 	InitNpc();
+	GraphicsEngine().GetTonemap().Reset(1.0f);
 	return true;
 }
 void Game::Update()

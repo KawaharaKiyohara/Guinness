@@ -35,8 +35,9 @@ namespace tkEngine{
 		*　輝度が大きく変わるシーン切り替えなどが発生する場合などに明暗順応がおかしく見える場合があります。
 		* そのような場合はシーン切り替えのタイミングでリセットを行ってみてください。
 		*/
-		void Reset()
+		void Reset(float timer)
 		{
+			m_resetTimer = timer;
 			m_isFirstWhenChangeScene = true;
 		}
 		/*!
@@ -80,5 +81,6 @@ namespace tkEngine{
 		CConstantBuffer m_cbTonemapCommon;
 		STonemapParam	m_tonemapParam;
 		CSamplerState m_samplerState;		//!<サンプラステート。@todo ひとまとめにした方がいい?。
+		float m_resetTimer = 0.0f;
 	};
 }
