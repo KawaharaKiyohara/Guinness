@@ -9,6 +9,8 @@
 #include "Counter.h"
 #include "NpcRender.h"
 #include "MikyanWindow.h"
+#include "MapChip.h"
+
 
 Game::Game()
 {
@@ -64,15 +66,11 @@ void Game::InitLight()
 //NPCを初期化。
 void Game::InitNpc()
 {
+	
 	//NPCの配置情報をロード。
 	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
-	/*
-	locData.QueryLocObject( [&](const auto& objData) {
-		
 
-	}
-	*/
 	//配置されているオブジェクトに対してクエリを行う。
 	using NpcRenderPair = std::pair<NpcRender*, int>;
 	std::map<std::wstring, NpcRenderPair> npcMap;
@@ -120,6 +118,17 @@ bool Game::Start()
 	//NPCの初期化。
 	InitNpc();
 	GraphicsEngine().GetTonemap().Reset(1.0f);
+#if 0 // ちょっと封印。
+	//マップチップを構築
+	CLocData mapLocData;
+	mapLocData.Load(L"locData/mapLoc.tks");
+	for (int i = 0; i < mapLocData.GetNumObject(); i++) {
+		MapChip* mChip = NewGO<MapChip>(0);
+		mChip->m_modelName = mapLocData.GetObjectName(i);
+		mChip->m_position = mapLocData.GetObjectPosition(i);
+		mChip->m_rotation = mapLocData.GetObjectRotation(i);
+	}
+#endif
 	return true;
 }
 void Game::Update()

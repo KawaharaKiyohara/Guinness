@@ -26,9 +26,9 @@ void Counter::Update()
 void Counter::OnCountup()
 {
 	m_count++;
-
+#if 0 // ÇøÇÂÇ¡Ç∆ïïàÛÅB
 	NewGO<EffectPlay>(0);
-
+#endif
 }
 void Counter::PostRender(CRenderContext& rc)
 {
@@ -36,6 +36,6 @@ void Counter::PostRender(CRenderContext& rc)
 	m_font.Begin(rc);
 	wchar_t text[256];
 	swprintf(text, L"%d", m_count);
-	m_font.Draw(text, { 0.0f, 200.0f }, CVector4::Yellow, 0.0f, 2.0f);
+	m_font.Draw(text, { -80.0f, 200.0f }, CVector4::Yellow, 0.0f, 2.0f);
 	m_font.End(rc);
 }

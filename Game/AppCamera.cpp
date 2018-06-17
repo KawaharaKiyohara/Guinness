@@ -16,8 +16,8 @@ AppCamera::~AppCamera()
 }
 bool AppCamera::Start()
 {
-	MainCamera().SetNear(0.1f);
-	MainCamera().SetFar(50000.0f);
+	MainCamera().SetNear(10.0f);
+	MainCamera().SetFar(30000.0f);
 		
 	//通常のカメラの移動処理のインスタンスを作成。
 	m_move = new AppCameraNormalMove(this);

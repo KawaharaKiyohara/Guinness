@@ -30,7 +30,7 @@ bool MikyanWindow::Start()
 	);
 
 	m_bgSpriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_bgSpriteRender->Init(L"sprite/MikyanWindowBG.dds", 256, 256);
+	m_bgSpriteRender->Init(L"sprite/MiyanWindowBG.dds", 256, 256);
 	m_bgSpriteRender->SetPivot({ 1.0f, 0.0f });
 	m_bgSpriteRender->SetPosition({ 640, -360, 0.0f });
 

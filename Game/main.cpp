@@ -49,9 +49,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 		//ゲームループを実行。
 		Engine().RunGameLoop();
 	}
+
 	//エンジンの終了処理。
 	Engine().Final();
 
 	return 0;
+
 }
 

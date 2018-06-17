@@ -39,5 +39,7 @@ public:
 	FollowData m_followData;							//追尾データ。
 	CVector3 m_offsetPos;
 	NpcRender* m_npcRender = nullptr;
+	float m_yspeed = 2.0f;
+	int m_count = 0;
 };
 

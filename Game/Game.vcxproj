@@ -628,6 +628,7 @@
     <ClCompile Include="AppCameraNormalMove.cpp" />
     <ClCompile Include="INpcNormalAction.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapChip.cpp" />
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="MikyanWIndow.cpp" />
@@ -664,6 +665,7 @@
     <ClInclude Include="IAppCameraMove.h" />
     <ClInclude Include="AppCameraNormalMove.h" />
     <ClInclude Include="INpcNormalAction.h" />
+    <ClInclude Include="MapChip.h" />
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="MikyanWIndow.h" />
@@ -682,9 +684,24 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_water.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountain-desert_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountains_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\vulcano_T.fbx" />
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\woman-esmeralda.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-ginger_T.fbx" />
@@ -792,14 +809,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\locData\mapLoc.tks" />
+    <None Include="Assets\modelData\npc\cowboy_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-casual_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-knight_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-native_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-soldier_T.FBX.max" />
+  </ItemGroup>
+  <ItemGroup>
     <ImageContentTask Include="Assets\sprite\MikyanWindow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\locData\mapLoc.tks">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
     <ImageContentTask Include="Assets\sprite\MiyanWindowBG.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
