@@ -208,6 +208,21 @@
     <MeshContentTask Include="Assets\modelData\mikyan.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">
@@ -327,15 +342,11 @@
     <CustomBuild Include="Assets\sound\bgm.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\touch_00.wav" />
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Assets\sound\touch_00.wav">
-      <Filter>Assets\sound</Filter>
-    </Media>
   </ItemGroup>
 </Project>

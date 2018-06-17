@@ -680,7 +680,12 @@
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\sky.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />

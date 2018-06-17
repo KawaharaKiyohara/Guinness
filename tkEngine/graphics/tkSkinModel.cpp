@@ -62,7 +62,7 @@ namespace tkEngine{
 		desc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
 		m_samplerState.Create(desc);
 
-		if (maxInstance > 1) {
+		if (maxInstance >= 1) {
 			//インスタンシング用のデータを作成。
 			m_instancingData.reset(new CMatrix[maxInstance]);
 			D3D11_BUFFER_DESC desc;
