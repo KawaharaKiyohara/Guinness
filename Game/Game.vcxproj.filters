@@ -208,6 +208,21 @@
     <MeshContentTask Include="Assets\modelData\mikyan.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-esmeralda.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-ginger_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-pamela_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-swimming_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\woman-native_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">
@@ -327,15 +342,11 @@
     <CustomBuild Include="Assets\sound\bgm.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\touch_00.wav" />
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Assets\sound\touch_00.wav">
-      <Filter>Assets\sound</Filter>
-    </Media>
   </ItemGroup>
 </Project>
