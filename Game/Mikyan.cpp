@@ -22,7 +22,7 @@ bool Mikyan::Start()
 	skinModelRender->SetShadowCasterFlag(true);
 	skinModelRender->SetShadowReceiverFlag(true);
 	Game* game = FindGO<Game>("Game");
-	game->m_countUpListener.push_back([&]() {
+	game->m_countUpListener.push_back([&]( int count ) {
 		OnCountUp();
 	});
 
@@ -59,23 +59,39 @@ void Mikyan::OnCountUp()
 		nearNpc->ChangeStateFollow();
 	}
 }
-bool Mikyan::InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc)
+bool Mikyan::InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc, int depth)
 {
+	int npcNo = 0;
 	//追尾可能データが存在するか調べる。
-	for (int i = 0; i < FollowData::MAX_FOLLOW; i++) {
-
-		if (followData.m_npc[i] == nullptr) {
-			//追尾可能。
-			followData.m_npc[i] = npc;
-			offsetPos += followData.offsetPos[i];
+	CVector3 asobiOffset;
+	//5列目以降は真後ろに続いていく。
+	asobiOffset.x = CMath::Lerp(Random().GetRandDouble(), -40.0f, 40.0f);
+	asobiOffset.y = 0.0f;
+	asobiOffset.z = CMath::Lerp(Random().GetRandDouble(), -40.0f, 40.0f);
+	if (depth > 3) {
+		
+		if (followData.m_npc[0] == nullptr) {
+			
+			followData.m_npc[0] = npc;
+			offsetPos += followData.offsetPos[0] + asobiOffset;
 			return true;
 		}
 	}
-	//見つからなかった場合は再帰的に調べていく。
-	int t = rand() % 3;
+	else {
+		for (int i = 0; i < FollowData::MAX_FOLLOW; i++) {
+
+			if (followData.m_npc[i] == nullptr) {
+				//追尾可能。
+				followData.m_npc[i] = npc;
+				offsetPos += followData.offsetPos[i] + asobiOffset;
+				return true;
+			}
+		}
+		npcNo = rand() % FollowData::MAX_FOLLOW;
+	}
 	
-	CVector3 offsetPosLocal = offsetPos + followData.offsetPos[t];
-	if (InnerAddFolloNpcListAndGetPositionInMikyan(offsetPosLocal, followData.m_npc[t]->m_followData, npc) == true) {
+	CVector3 offsetPosLocal = offsetPos + followData.offsetPos[npcNo] + asobiOffset;
+	if (InnerAddFolloNpcListAndGetPositionInMikyan(offsetPosLocal, followData.m_npc[npcNo]->m_followData, npc, depth+1) == true) {
 		offsetPos = offsetPosLocal;
 		return true;
 	}
@@ -86,7 +102,7 @@ bool Mikyan::InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, Fol
 void Mikyan::AddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, Npc* npc)
 {
 	offsetPos = CVector3::Zero;
-	InnerAddFolloNpcListAndGetPositionInMikyan(offsetPos, m_followData, npc);	
+	InnerAddFolloNpcListAndGetPositionInMikyan(offsetPos, m_followData, npc, 0);	
 }
 void Mikyan::Update()
 {
