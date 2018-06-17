@@ -9,6 +9,10 @@ public:
 	void PostRender(CRenderContext& rc) override;
 	//カウントアップ。
 	void OnCountup();
+	int GetCount() const
+	{
+		return m_count;
+	}
 private:
 	CFont m_font;		//フォント。
 	int m_count = 0;

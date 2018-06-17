@@ -14,7 +14,7 @@ Counter::~Counter()
 bool Counter::Start()
 {
 	Game* game = FindGO<Game>("Game");
-	game->m_countUpListener.push_back([&]() {
+	game->m_countUpListener.push_back([&](int count) {
 		OnCountup();
 	});
 	m_font.SetShadowParam(true, 3.0f, CVector4::Black);
