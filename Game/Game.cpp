@@ -8,6 +8,7 @@
 #include "tkEngine/light/tkDirectionLight.h"
 #include "Counter.h"
 #include "NpcRender.h"
+#include "MapChip.h"
 Game::Game()
 {
 }
@@ -60,6 +61,7 @@ void Game::InitLight()
 //NPCを初期化。
 void Game::InitNpc()
 {
+	
 	//NPCの配置情報をロード。
 	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
@@ -108,6 +110,16 @@ bool Game::Start()
 	InitLight();
 	//NPCの初期化。
 	InitNpc();
+
+	//マップチップを構築
+	CLocData mapLocData;
+	mapLocData.Load(L"locData/mapLoc.tks");
+	for (int i = 0; i < mapLocData.GetNumObject(); i++) {
+		MapChip* mChip = NewGO<MapChip>(0);
+		mChip->m_modelName = mapLocData.GetObjectName(i);
+		mChip->m_position = mapLocData.GetObjectPosition(i);
+		mChip->m_rotation = mapLocData.GetObjectRotation(i);
+	}
 	return true;
 }
 void Game::Update()

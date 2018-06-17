@@ -628,6 +628,7 @@
     <ClCompile Include="AppCameraNormalMove.cpp" />
     <ClCompile Include="INpcNormalAction.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapChip.cpp" />
     <ClCompile Include="Mikyan.cpp" />
     <ClCompile Include="AppCamera.cpp" />
     <ClCompile Include="NpcNomalActionManzi.cpp" />
@@ -663,6 +664,7 @@
     <ClInclude Include="IAppCameraMove.h" />
     <ClInclude Include="AppCameraNormalMove.h" />
     <ClInclude Include="INpcNormalAction.h" />
+    <ClInclude Include="MapChip.h" />
     <ClInclude Include="Mikyan.h" />
     <ClInclude Include="AppCamera.h" />
     <ClInclude Include="NpcNomalActionManzi.h" />
@@ -682,7 +684,17 @@
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\woman-esmeralda.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-ginger_T.fbx" />
@@ -788,6 +800,14 @@
     <CustomBuild Include="Assets\effect\hanabi.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\locData\mapLoc.tks" />
+    <None Include="Assets\modelData\npc\cowboy_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-casual_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-knight_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-native_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-soldier_T.FBX.max" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
