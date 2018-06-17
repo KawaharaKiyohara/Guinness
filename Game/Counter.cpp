@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Counter.h"
 #include "Game.h"
+#include "EffectPlay.h"
 
 Counter::Counter()
 {
@@ -25,6 +26,9 @@ void Counter::Update()
 void Counter::OnCountup()
 {
 	m_count++;
+
+	NewGO<EffectPlay>(0);
+
 }
 void Counter::PostRender(CRenderContext& rc)
 {
