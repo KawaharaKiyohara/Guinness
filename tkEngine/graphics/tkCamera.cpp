@@ -42,7 +42,6 @@ namespace tkEngine{
 			return;
 		}
 #endif
-		m_aspect = (float)GraphicsEngine().GetFrameBufferWidth() / (float)GraphicsEngine().GetFrameBufferHeight();
 		if(m_isNeedUpdateProjectionMatrix){
 			if (m_updateProjMatrixFunc == enUpdateProjMatrixFunc_Perspective) {
 				//“§‹•ÏŠ·s—ñ‚ğŒvZB

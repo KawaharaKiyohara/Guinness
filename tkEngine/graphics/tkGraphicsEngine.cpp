@@ -9,6 +9,7 @@
 namespace tkEngine{
 	CGraphicsEngine::CGraphicsEngine()
 	{
+		
 	}
 	CGraphicsEngine::~CGraphicsEngine()
 	{
@@ -190,6 +191,8 @@ namespace tkEngine{
 		m_spriteBatch = std::make_unique<DirectX::SpriteBatch>(m_pImmediateContext);
 		m_spriteFont = std::make_unique<DirectX::SpriteFont>(m_pd3dDevice, L"font/myfile.spritefont");
 
+		//3Dカメラの初期化。
+		m_mainCamera.SetAspect((float)m_frameBufferWidth/ (float)m_frameBufferHeight);
 		//2Dカメラの初期化。
 		m_2dCamera.SetTarget(CVector3::Zero);
 		m_2dCamera.SetPosition({0.0f, 0.0f, -10.0f});

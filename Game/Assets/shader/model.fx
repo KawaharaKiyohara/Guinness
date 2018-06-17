@@ -437,6 +437,17 @@ float4 PSMain( PSInput In ) : SV_Target0
     return float4(finalColor, 1.0f); 
 #endif
 }
+//2Dみきゃん。
+float4 PS2DMikyan( PSInput In ) : SV_Target0
+{
+	float4 finalColor = albedoTexture.Sample(Sampler, In.TexCoord);
+	//トゥーン調にする。
+	float3 ligdir = normalize( float3( 2, -1, -1 ) );
+	float t = dot(In.Normal, ligdir);
+	t =  min( 1.0, step(t, -0.2) + 0.9 );
+	finalColor.xyz *= t;
+	return finalColor;
+}
 float4 PSMainSky( PSInput In ) : SV_Target0
 {
 	//視点までのベクトルを求める。

@@ -126,6 +126,9 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="MikyanWIndow.cpp">
+      <Filter>Src\Mikyan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -191,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="MikyanWIndow.h">
+      <Filter>Src\Mikyan</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -360,5 +366,16 @@
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\MikyanWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\locData\mapLoc.tks">
+      <Filter>Assets\locData</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\sprite\MIkyanWindowBG.png">
+      <Filter>Assets\sprite</Filter>
+    </Image>
   </ItemGroup>
 </Project>

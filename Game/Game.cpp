@@ -8,6 +8,8 @@
 #include "tkEngine/light/tkDirectionLight.h"
 #include "Counter.h"
 #include "NpcRender.h"
+#include "MikyanWindow.h"
+
 Game::Game()
 {
 }
@@ -28,6 +30,7 @@ Game::~Game()
 	for (auto& npcRender : m_npcRenderList) {
 		DeleteGO(npcRender);
 	}
+	DeleteGO(m_mikyanWindow);
 }
 //ライトの初期化。
 void Game::InitLight()
@@ -64,6 +67,12 @@ void Game::InitNpc()
 	//NPCの配置情報をロード。
 	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
+	/*
+	locData.QueryLocObject( [&](const auto& objData) {
+		
+
+	}
+	*/
 	//配置されているオブジェクトに対してクエリを行う。
 	using NpcRenderPair = std::pair<NpcRender*, int>;
 	std::map<std::wstring, NpcRenderPair> npcMap;
@@ -104,6 +113,7 @@ bool Game::Start()
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
 	m_counter = NewGO<Counter>(0);
+	m_mikyanWindow = NewGO<MikyanWindow>(0);
 
 	//ライトの初期化。
 	InitLight();

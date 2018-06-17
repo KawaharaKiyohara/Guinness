@@ -216,6 +216,10 @@ namespace tkEngine{
 		{
 			return m_aspect;
 		}
+		void SetAspect(float t)
+		{
+			m_aspect = t;
+		}
 		/*!
 		* @brief	ワールド座標からスクリーン座標を計算する。
 		*@details

@@ -15,9 +15,17 @@ namespace tkEngine {
 			m_sprite.Init(m_texture, w, h);
 		}
 		
+		void CSpriteRender::Init(CShaderResourceView& texSrv, float w, float h, bool isDraw3D)
+		{
+			m_isDraw3D = isDraw3D;
+			m_sprite.Init(texSrv, w, h);
+		}
+
 		void CSpriteRender::Update()
 		{
-			m_sprite.SetTexture(m_texture);
+			if (m_texture.GetBody() != nullptr) {
+				m_sprite.SetTexture(m_texture);
+			}
 			m_sprite.Update(m_position, m_rotation, m_scale, m_pivot);
 		}
 		void CSpriteRender::Render(CRenderContext& rc)

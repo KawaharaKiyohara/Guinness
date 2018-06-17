@@ -10,6 +10,8 @@ class Sky;
 class Npc;
 class Counter;
 class NpcRender;
+class MikyanWindow;
+
 class Game : public IGameObject
 {
 private:
@@ -33,6 +35,7 @@ public:
 	AppCamera* m_camera = nullptr;	//カメラ。
 	Ground* m_ground = nullptr;		//地面。
 	Sky* m_sky = nullptr;			//空。
+	MikyanWindow* m_mikyanWindow = nullptr;	//みきゃんを移す小窓。
 	std::vector<prefab::CDirectionLight*> m_lights;	//ｌｉｇｈｔ。
 	std::vector<Npc*> m_npc;		//NPC;
 	Counter* m_counter = nullptr;	//カウンター。
