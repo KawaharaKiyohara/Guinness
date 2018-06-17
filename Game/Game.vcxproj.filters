@@ -126,7 +126,9 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="MapChip.cpp" />
+    <ClCompile Include="MapChip.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -193,7 +195,9 @@
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="MapChip.h" />
+    <ClInclude Include="MapChip.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -210,14 +214,29 @@
     <MeshContentTask Include="Assets\modelData\sky.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX">
+    <MeshContentTask Include="Assets\modelData\mikyan.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX">
       <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\mikyan.FBX">
-      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\woman-esmeralda.fbx">
       <Filter>Assets\modelData\npc</Filter>
@@ -234,19 +253,19 @@
     <MeshContentTask Include="Assets\modelData\npc\woman-swimming_T.fbx">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX">
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx">
+    <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx">
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx">
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx">
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
   </ItemGroup>
@@ -372,13 +391,30 @@
     <CustomBuild Include="Assets\effect\hanabi.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
-    <CustomBuild Include="Assets\locData\mapLoc.tks">
-      <Filter>Assets\locData</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\modelData\npc\man-native_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\man-soldier_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\cowboy_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\man-casual_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\man-knight_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\locData\mapLoc.tks">
+      <Filter>Assets\locData</Filter>
+    </None>
   </ItemGroup>
 </Project>
