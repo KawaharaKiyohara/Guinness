@@ -262,6 +262,21 @@
     <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_water.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountain-desert_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountains_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\vulcano_T.fbx">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">

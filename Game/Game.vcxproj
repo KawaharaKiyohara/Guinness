@@ -680,6 +680,11 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_water.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountain-desert_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountains_T.fbx" />
+    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\vulcano_T.fbx" />
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
