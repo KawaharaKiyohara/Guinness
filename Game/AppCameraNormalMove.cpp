@@ -22,6 +22,11 @@ AppCameraNormalMove::~AppCameraNormalMove()
 }
 void AppCameraNormalMove::OnCountUp(int count)
 {
+	if (count == 50) {
+		m_targetOffset = 550.0f;
+		m_cameraTargetToPos.y = 100.0f;
+		m_cameraTargetToPos.z = 1200.0f;
+	}
 	if (count == 100) {
 		m_targetOffset = 700.0f;
 		m_cameraTargetToPos.y = 100.0f;
