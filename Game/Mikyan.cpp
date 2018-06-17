@@ -22,7 +22,7 @@ bool Mikyan::Start()
 	skinModelRender->SetShadowCasterFlag(true);
 	skinModelRender->SetShadowReceiverFlag(true);
 	Game* game = FindGO<Game>("Game");
-	game->m_countUpListener.push_back([&]() {
+	game->m_countUpListener.push_back([&]( int count ) {
 		OnCountUp();
 	});
 

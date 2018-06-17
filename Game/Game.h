@@ -16,11 +16,17 @@ private:
 	void InitLight();
 	void InitNpc();
 public:
-	using OnCountUp = std::function<void()>;
+	
+	using OnCountUp = std::function<void(int count)>;
 	Game();
 	~Game();
 	bool Start();
 	void Update();
+	//カウントアップリスナーを追加。
+	void AddCountUpListener(OnCountUp cb)
+	{
+		m_countUpListener.push_back(cb);
+	}
 	Mikyan* m_mikyan = nullptr;		//みきゃん。
 	AppCamera* m_camera = nullptr;	//カメラ。
 	Ground* m_ground = nullptr;		//地面。
