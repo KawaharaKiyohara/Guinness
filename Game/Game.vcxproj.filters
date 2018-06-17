@@ -126,6 +126,7 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="MapChip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -192,6 +193,7 @@
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="MapChip.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -369,6 +371,9 @@
     <CustomBuild Include="Assets\sound\touch_00.wav" />
     <CustomBuild Include="Assets\effect\hanabi.efk">
       <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\locData\mapLoc.tks">
+      <Filter>Assets\locData</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
