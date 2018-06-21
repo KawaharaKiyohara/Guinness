@@ -624,6 +624,7 @@
     <ClCompile Include="EffectPlay.cpp" />
     <ClCompile Include="FollowData.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GoalCamera.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAppCameraMove.cpp" />
     <ClCompile Include="AppCameraNormalMove.cpp" />
@@ -661,6 +662,7 @@
     <ClInclude Include="EffectPlay.h" />
     <ClInclude Include="FollowData.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GoalCamera.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IAppCameraMove.h" />
     <ClInclude Include="AppCameraNormalMove.h" />
@@ -684,8 +686,23 @@
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-special-ge_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier-us_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\man-swimming_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-tie_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\man-worker_T.fbx" />
     <MeshContentTask Include="Assets\modelData\npc\woman-casual.FBX" />
+    <MeshContentTask Include="Assets\modelData\npc\woman-esmeralda.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\woman-ginger_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\woman-native_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\woman-pamela_T.fbx" />
+    <MeshContentTask Include="Assets\modelData\npc\woman-swimming_T.fbx" />
     <MeshContentTask Include="Assets\modelData\sky.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
@@ -793,6 +810,16 @@
     <CustomBuild Include="Assets\effect\hanabiUp.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\hanabiStar.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <None Include="Assets\modelData\npc\cowboy_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-casual_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-knight_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-native_T.FBX.max" />
+    <None Include="Assets\modelData\npc\man-soldier_T.FBX.max" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

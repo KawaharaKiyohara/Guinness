@@ -24,6 +24,7 @@ public:
 	CVector3 m_moveTargetPosition = CVector3::Zero;	//ターゲット座標。
 	CQuaternion rotation = CQuaternion::Identity;	//回転。
 	FollowData m_followData;
+	bool Stopflag = false;
 private:
 	bool InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc, int );
 	

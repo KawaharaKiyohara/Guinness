@@ -41,7 +41,7 @@ namespace tkEngine{
 		*							インスタンシング描画を行う場合は、UpdateInstance関数を使用して、
 		*							インスタンス固有のデータを更新する必要があります。
 		*/
-		void Init(CSkinModelData& modelData, int maxInstance = 1);
+		void Init(CSkinModelData& modelData, int maxInstance = 0);
 		/*!
 		*@brief	更新。
 		*@details

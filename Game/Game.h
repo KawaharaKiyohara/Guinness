@@ -17,7 +17,8 @@ private:
 	void InitLight();
 	void InitNpc();
 public:
-	
+	static const int GUINESS_RECORD = 1000;		//ギネスレコード
+	static const int KAWAHARA_TARGET = 600;	//河原学園の目標。
 	using OnCountUp = std::function<void(int count)>;
 	Game();
 	~Game();
@@ -35,7 +36,7 @@ public:
 	std::vector<prefab::CDirectionLight*> m_lights;	//ｌｉｇｈｔ。
 	std::vector<Npc*> m_npc;		//NPC;
 	Counter* m_counter = nullptr;	//カウンター。
-	EffectManager* m_EffectManager = nullptr;			//空。
+	EffectManager* m_EffectManager = nullptr;			//エフェクト管理。
 	std::vector<OnCountUp> m_countUpListener;		//カウントアップのリスナー。
 	prefab::CSoundSource* m_bgm = nullptr;
 	std::vector<NpcRender*> m_npcRenderList;

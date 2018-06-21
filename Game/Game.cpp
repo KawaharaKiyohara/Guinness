@@ -100,7 +100,7 @@ void Game::InitNpc()
 bool Game::Start()
 {
 	m_mikyan = NewGO<Mikyan>(0, "‚Ý‚«‚á‚ñ");
-	m_camera = NewGO<AppCamera>(0);
+	m_camera = NewGO<AppCamera>(0, "AppCamera");
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
 	m_EffectManager = NewGO<EffectManager>(0);
