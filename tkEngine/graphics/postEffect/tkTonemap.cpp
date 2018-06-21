@@ -198,7 +198,10 @@ namespace tkEngine{
 				rc.PSSetShaderResource(1, m_calcAvgRT[0].GetRenderTargetSRV());
 				rc.PSSetShader(m_psCalcAdaptedLuminanceFirstShader);
 				postEffect->DrawFullScreenQuad(rc);
-				m_isFirstWhenChangeScene = false;
+				m_resetTimer -= GameTime().GetFrameDeltaTime();
+				if (m_resetTimer < 0.0f) {
+					m_isFirstWhenChangeScene = false;
+				}
 			}
 			else {
 					

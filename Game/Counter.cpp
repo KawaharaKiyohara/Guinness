@@ -18,6 +18,7 @@ bool Counter::Start()
 		OnCountup();
 	});
 	m_font.SetShadowParam(true, 3.0f, CVector4::Black);
+	//ここでセーブデータを読み込んで、m_countに反映させる。
 	return true;
 }
 void Counter::Update()
@@ -26,7 +27,7 @@ void Counter::Update()
 void Counter::OnCountup()
 {
 	m_count++;
-
+	//ファイルの保存
 }
 void Counter::PostRender(CRenderContext& rc)
 {
@@ -34,6 +35,6 @@ void Counter::PostRender(CRenderContext& rc)
 	m_font.Begin(rc);
 	wchar_t text[256];
 	swprintf(text, L"%d", m_count);
-	m_font.Draw(text, { 0.0f, 200.0f }, CVector4::Yellow, 0.0f, 2.0f);
+	m_font.Draw(text, { -80.0f, 200.0f }, CVector4::Yellow, 0.0f, 2.0f);
 	m_font.End(rc);
 }

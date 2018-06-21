@@ -17,7 +17,15 @@ namespace tkEngine {
 			*@param[in] isDraw3D	3D空間で描画する？
 			*/
 			void Init(const wchar_t* texFilePath, float w, float h, bool isDraw3D = false);
-			
+			/*!
+			* @brief	初期化。
+			*@param[in]	texSrv		テクスチャ。
+			*@param[in]	w		幅。
+			*@param[in]	h		高さ。
+			*@param[in] isDraw3D	3D空間で描画する？
+			*/
+			void Init(CShaderResourceView& texSrv, float w, float h, bool isDraw3D = false);
+
 			/*!
 			* @brief	座標を設定。
 			*/
@@ -66,6 +74,7 @@ namespace tkEngine {
 			{
 				m_sprite.SetMulColor(mulColor);
 			}
+			
 		public:
 			void Update() override final;
 			void Render(CRenderContext& rc)override final;

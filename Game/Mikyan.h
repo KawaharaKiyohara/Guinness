@@ -25,6 +25,7 @@ public:
 	CQuaternion rotation = CQuaternion::Identity;	//回転。
 	FollowData m_followData;
 	bool Stopflag = false;
+	float m_updownSinKind = 0.0f;					//上下移動で使うサインカーブの種。sin関数に渡します。
 private:
 	bool InnerAddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, FollowData& followData, Npc* npc, int );
 	

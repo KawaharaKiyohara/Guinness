@@ -9,6 +9,10 @@
 #include "Counter.h"
 #include "NpcRender.h"
 #include "EffectManager.h"
+#include "MikyanWindow.h"
+#include "MapChip.h"
+
+
 Game::Game()
 {
 }
@@ -29,6 +33,7 @@ Game::~Game()
 	for (auto& npcRender : m_npcRenderList) {
 		DeleteGO(npcRender);
 	}
+	DeleteGO(m_mikyanWindow);
 }
 //ライトの初期化。
 void Game::InitLight()
@@ -37,20 +42,21 @@ void Game::InitLight()
 	auto lightDir = CVector3(1, -1, -1);
 	lightDir.Normalize();
 	lig->SetDirection(lightDir);
-	lig->SetColor({ 10.2f, 10.2f, 10.2f, 1.0f });
+	lig->SetColor({ 0.8f, 0.8f, 0.8f, 1.0f });
 	m_lights.push_back(lig);
 
 	lig = NewGO<prefab::CDirectionLight>(0);
-	lig->SetColor({ 1.2f, 1.2f, 1.2f, 1.0f });
+	lig->SetColor({ 0.3f, 0.3f, 0.3f, 1.0f });
 	lig->SetDirection({ -1.0f, 0.0f, 0.0f });
 	m_lights.push_back(lig);
 
 	lig = NewGO<prefab::CDirectionLight>(0);
-	lig->SetColor({ 1.2f, 1.2f, 1.2f, 1.0f });
+	lig->SetColor({ 0.3f, 0.3f, 0.3f, 1.0f });
 	lightDir.Set(1.0f, -1.0f, -1.0f);
 	lightDir.Normalize();
 	lig->SetDirection(lightDir);
 	m_lights.push_back(lig);
+	LightManager().SetAmbientLight({ 0.6f, 0.6f, 0.6f });
 
 	GraphicsEngine().GetShadowMap().SetLightDirection(lightDir);
 
@@ -61,9 +67,11 @@ void Game::InitLight()
 //NPCを初期化。
 void Game::InitNpc()
 {
+	
 	//NPCの配置情報をロード。
 	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
+
 	//配置されているオブジェクトに対してクエリを行う。
 	using NpcRenderPair = std::pair<NpcRender*, int>;
 	std::map<std::wstring, NpcRenderPair> npcMap;
@@ -105,11 +113,24 @@ bool Game::Start()
 	m_sky = NewGO<Sky>(0);
 	m_EffectManager = NewGO<EffectManager>(0);
 	m_counter = NewGO<Counter>(0);
+	m_mikyanWindow = NewGO<MikyanWindow>(0);
 
 	//ライトの初期化。
 	InitLight();
 	//NPCの初期化。
 	InitNpc();
+	GraphicsEngine().GetTonemap().Reset(1.0f);
+#if 0 // ちょっと封印。
+	//マップチップを構築
+	CLocData mapLocData;
+	mapLocData.Load(L"locData/mapLoc.tks");
+	for (int i = 0; i < mapLocData.GetNumObject(); i++) {
+		MapChip* mChip = NewGO<MapChip>(0);
+		mChip->m_modelName = mapLocData.GetObjectName(i);
+		mChip->m_position = mapLocData.GetObjectPosition(i);
+		mChip->m_rotation = mapLocData.GetObjectRotation(i);
+	}
+#endif
 	return true;
 }
 void Game::Update()

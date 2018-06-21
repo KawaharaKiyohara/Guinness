@@ -126,11 +126,17 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="GoalCamera.cpp">
+      <Filter>Src\Camera\Move</Filter>
+    </ClCompile>
     <ClCompile Include="EffectManager.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="GoalCamera.cpp">
-      <Filter>Src\Camera\Move</Filter>
+    <ClCompile Include="MikyanWIndow.cpp">
+      <Filter>Src\Mikyan</Filter>
+    </ClCompile>
+    <ClCompile Include="MapChip.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -198,11 +204,17 @@
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="GoalCamera.h">
+      <Filter>Src\Camera\Move</Filter>
+    </ClInclude>
     <ClInclude Include="EffectManager.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="GoalCamera.h">
-      <Filter>Src\Camera\Move</Filter>
+    <ClInclude Include="MikyanWIndow.h">
+      <Filter>Src\Mikyan</Filter>
+    </ClInclude>
+    <ClInclude Include="MapChip.h">
+      <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -222,15 +234,6 @@
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\mikyan.FBX">
       <Filter>Assets\modelData</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
-      <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\man-soldier_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
@@ -272,6 +275,15 @@
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\man-casual.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-casual_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-knight_T.FBX">
+      <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
     </MeshContentTask>
   </ItemGroup>
@@ -400,10 +412,10 @@
     <CustomBuild Include="Assets\effect\hanabiDown.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
-    <CustomBuild Include="Assets\effect\hanabiUp.efk">
+    <CustomBuild Include="Assets\effect\hanabiStar.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
-    <CustomBuild Include="Assets\effect\hanabiStar.efk">
+    <CustomBuild Include="Assets\effect\hanabiUp.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -411,14 +423,14 @@
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\MiyanWindowBG.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\MikyanWindow.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\modelData\npc\man-casual_T.FBX.max">
-      <Filter>Assets\modelData\npc</Filter>
-    </None>
-    <None Include="Assets\modelData\npc\man-knight_T.FBX.max">
-      <Filter>Assets\modelData\npc</Filter>
-    </None>
     <None Include="Assets\modelData\npc\man-native_T.FBX.max">
       <Filter>Assets\modelData\npc</Filter>
     </None>
@@ -426,6 +438,12 @@
       <Filter>Assets\modelData\npc</Filter>
     </None>
     <None Include="Assets\modelData\npc\cowboy_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\man-casual_T.FBX.max">
+      <Filter>Assets\modelData\npc</Filter>
+    </None>
+    <None Include="Assets\modelData\npc\man-knight_T.FBX.max">
       <Filter>Assets\modelData\npc</Filter>
     </None>
   </ItemGroup>

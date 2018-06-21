@@ -11,6 +11,8 @@ class Npc;
 class Counter;
 class NpcRender;
 class EffectManager;
+class MikyanWindow;
+
 class Game : public IGameObject
 {
 private:
@@ -18,7 +20,7 @@ private:
 	void InitNpc();
 public:
 	static const int GUINESS_RECORD = 1000;		//ギネスレコード
-	static const int KAWAHARA_TARGET = 600;	//河原学園の目標。
+	static const int KAWAHARA_TARGET = 1200;	//河原学園の目標。
 	using OnCountUp = std::function<void(int count)>;
 	Game();
 	~Game();
@@ -33,6 +35,7 @@ public:
 	AppCamera* m_camera = nullptr;	//カメラ。
 	Ground* m_ground = nullptr;		//地面。
 	Sky* m_sky = nullptr;			//空。
+	MikyanWindow* m_mikyanWindow = nullptr;	//みきゃんを移す小窓。
 	std::vector<prefab::CDirectionLight*> m_lights;	//ｌｉｇｈｔ。
 	std::vector<Npc*> m_npc;		//NPC;
 	Counter* m_counter = nullptr;	//カウンター。
