@@ -1,4 +1,7 @@
 #include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
 #include "Counter.h"
 #include "Game.h"
 #include "EffectPlay.h"
@@ -19,6 +22,14 @@ bool Counter::Start()
 	});
 	m_font.SetShadowParam(true, 3.0f, CVector4::Black);
 	//ここでセーブデータを読み込んで、m_countに反映させる。
+	FILE *fp;
+	fp = fopen("test.txt", "r");
+	if (fp != NULL) {
+		fread(hoge, 1, 5, fp);
+		fclose(fp);
+		m_count = atoi(hoge);
+	}
+
 	return true;
 }
 void Counter::Update()
@@ -28,6 +39,13 @@ void Counter::OnCountup()
 {
 	m_count++;
 	//ファイルの保存
+	FILE *fp;
+	fp = fopen("test.txt", "w");
+	if (fp != NULL) {
+		fprintf(fp, "%d", m_count);
+		fclose(fp);
+	}
+
 }
 void Counter::PostRender(CRenderContext& rc)
 {
