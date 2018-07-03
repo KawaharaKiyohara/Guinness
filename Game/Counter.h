@@ -16,5 +16,7 @@ public:
 private:
 	CFont m_font;		//フォント。
 	int m_count = 0;
+	char hoge[5];
+
 };
 

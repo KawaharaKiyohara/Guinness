@@ -8,6 +8,7 @@
 #include "tkEngine/light/tkDirectionLight.h"
 #include "Counter.h"
 #include "NpcRender.h"
+#include "EffectManager.h"
 #include "MikyanWindow.h"
 #include "MapChip.h"
 #include "Usagi.h"
@@ -111,6 +112,7 @@ bool Game::Start()
 	m_camera = NewGO<AppCamera>(0);
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
+	m_EffectManager = NewGO<EffectManager>(0);
 	m_counter = NewGO<Counter>(0);
 	m_usagi = NewGO<Usagi>(0, "🐇");
 	m_mikyanWindow = NewGO<MikyanWindow>(0);
@@ -133,7 +135,7 @@ bool Game::Start()
 #endif
 	return true;
 }
-void Game::Update()
+void Game::Update() 
 {
 #if BUILD_LEVEL != BUILD_LEVEL_MASTER
 	if (Pad(0).IsPress(enButtonRight) == true) {

@@ -126,16 +126,18 @@
     <ClCompile Include="EffectPlay.cpp">
       <Filter>Src\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="MapChip.cpp">
-      <Filter>Src</Filter>
+    <ClCompile Include="GoalCamera.cpp">
+      <Filter>Src\Camera\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>Src\Effect</Filter>
     </ClCompile>
     <ClCompile Include="MikyanWIndow.cpp">
       <Filter>Src\Mikyan</Filter>
     </ClCompile>
-    <ClCompile Include="NpcNormalAction_LRUP.cpp">
-      <Filter>Src\NPC\NormalAction</Filter>
+    <ClCompile Include="MapChip.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Usagi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -202,16 +204,18 @@
     <ClInclude Include="EffectPlay.h">
       <Filter>Src\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="MapChip.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="GoalCamera.h">
+      <Filter>Src\Camera\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>Src\Effect</Filter>
     </ClInclude>
     <ClInclude Include="MikyanWIndow.h">
       <Filter>Src\Mikyan</Filter>
     </ClInclude>
-    <ClInclude Include="NpcNormalAction_LRUP.h">
-      <Filter>Src\NPC\NormalAction</Filter>
+    <ClInclude Include="MapChip.h">
+      <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Usagi.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -281,24 +285,6 @@
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_T.fbx">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_water.fbx">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountain-desert_T.fbx">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountains_T.fbx">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\vulcano_T.fbx">
-      <Filter>Assets\modelData\npc</Filter>
-    </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\usagigi.FBX">
-      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
@@ -423,13 +409,26 @@
     <CustomBuild Include="Assets\effect\hanabi.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiDown.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiStar.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiUp.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-    <ImageContentTask Include="Assets\sprite\MikyanWindow.png" />
-    <ImageContentTask Include="Assets\sprite\MiyanWindowBG.png" />
+    <ImageContentTask Include="Assets\sprite\MiyanWindowBG.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\MikyanWindow.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\modelData\npc\man-native_T.FBX.max">
@@ -446,9 +445,6 @@
     </None>
     <None Include="Assets\modelData\npc\man-knight_T.FBX.max">
       <Filter>Assets\modelData\npc</Filter>
-    </None>
-    <None Include="Assets\locData\mapLoc.tks">
-      <Filter>Assets\locData</Filter>
     </None>
   </ItemGroup>
 </Project>

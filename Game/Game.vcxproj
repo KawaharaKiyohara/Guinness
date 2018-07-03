@@ -620,9 +620,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="EffectManager.cpp" />
     <ClCompile Include="EffectPlay.cpp" />
     <ClCompile Include="FollowData.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GoalCamera.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAppCameraMove.cpp" />
     <ClCompile Include="AppCameraNormalMove.cpp" />
@@ -661,9 +663,11 @@
     <CustomBuild Include="Assets\shader\modelStruct.h" />
     <CustomBuild Include="Assets\shader\sampleBRDF.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="EffectManager.h" />
     <ClInclude Include="EffectPlay.h" />
     <ClInclude Include="FollowData.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GoalCamera.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IAppCameraMove.h" />
     <ClInclude Include="AppCameraNormalMove.h" />
@@ -688,11 +692,6 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_T.fbx" />
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\hexagonTile-land_water.fbx" />
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountain-desert_T.fbx" />
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\mountains_T.fbx" />
-    <MeshContentTask Include="..\素材\- Meshes\T\Terrains\vulcano_T.fbx" />
     <MeshContentTask Include="Assets\modelData\ground.FBX" />
     <MeshContentTask Include="Assets\modelData\mikyan.FBX" />
     <MeshContentTask Include="Assets\modelData\npc\cowboy_T.FBX" />
@@ -814,7 +813,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\locData\mapLoc.tks" />
+    <CustomBuild Include="Assets\effect\hanabiDown.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiStar.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\hanabiUp.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\modelData\npc\cowboy_T.FBX.max" />
     <None Include="Assets\modelData\npc\man-casual_T.FBX.max" />
     <None Include="Assets\modelData\npc\man-knight_T.FBX.max" />

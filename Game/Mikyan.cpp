@@ -106,34 +106,32 @@ void Mikyan::AddFolloNpcListAndGetPositionInMikyan(CVector3& offsetPos, Npc* npc
 }
 void Mikyan::Update()
 {
-	
-	const auto csMoveSpeed = 300.0f * GameTime().GetFrameDeltaTime();
-	CVector3 moveSpeed = m_moveTargetPosition - position;
-	moveSpeed.y = 0.0f;
-	if (moveSpeed.Length() > csMoveSpeed) {
-		//移動しろ。
-		moveSpeed.Normalize();
-		position += moveSpeed * csMoveSpeed;
-		rotation.SetRotation(CVector3::AxisY, atan2f(moveSpeed.z, moveSpeed.x) + CMath::PI * 0.5f);
-		m_updownSinKind += 10.0f * GameTime().GetFrameDeltaTime();
-		position.y = (sinf(m_updownSinKind)+1.0f) * 10.0f;
-	}
-	else {
-		position.x = m_moveTargetPosition.x;
-		position.z = m_moveTargetPosition.z;
-
-	}
-
-	
-
+	if (Stopflag == false) {
+		const auto csMoveSpeed = 300.0f * GameTime().GetFrameDeltaTime();
+		CVector3 moveSpeed = m_moveTargetPosition - position;
+		moveSpeed.y = 0.0f;
+		if (moveSpeed.Length() > csMoveSpeed) {
+			//移動しろ。
+			moveSpeed.Normalize();
+			position += moveSpeed * csMoveSpeed;
+			rotation.SetRotation(CVector3::AxisY, atan2f(moveSpeed.z, moveSpeed.x) + CMath::PI * 0.5f);
+			m_updownSinKind += 10.0f * GameTime().GetFrameDeltaTime();
+			position.y = (sinf(m_updownSinKind) + 1.0f) * 10.0f;
+		}
+		else {
+			position.x = m_moveTargetPosition.x;
+			position.z = m_moveTargetPosition.z;
+		}
 #if BUILD_LEVEL != BUILD_LEVEL_MASTER
-	// デバッグ機能！！！
-	auto stick = CVector2(Pad(0).GetLStickXF(), Pad(0).GetLStickYF());
-	position.x += stick.x * -10.0f;
-	position.z += stick.y * -10.0f;
-	
-	
+			// デバッグ機能！！！
+			auto stick = CVector2(Pad(0).GetLStickXF(), Pad(0).GetLStickYF());
+		position.x += stick.x * -10.0f;
+		position.z += stick.y * -10.0f;
+
+
 #endif
-	skinModelRender->SetPosition(position);
-	skinModelRender->SetRotation(rotation);
+		skinModelRender->SetPosition(position);
+		skinModelRender->SetRotation(rotation);
+	}
+	
 }
