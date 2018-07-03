@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Game.h"
 #include "Mikyan.h"
 #include "AppCamera.h"
@@ -10,6 +10,7 @@
 #include "NpcRender.h"
 #include "MikyanWindow.h"
 #include "MapChip.h"
+#include "Usagi.h"
 
 
 Game::Game()
@@ -34,7 +35,7 @@ Game::~Game()
 	}
 	DeleteGO(m_mikyanWindow);
 }
-//ƒ‰ƒCƒg‚Ì‰Šú‰»B
+//ãƒ©ã‚¤ãƒˆã®åˆæœŸåŒ–ã€‚
 void Game::InitLight()
 {
 	auto lig = NewGO<prefab::CDirectionLight>(0);
@@ -63,15 +64,15 @@ void Game::InitLight()
 	m_bgm->Init("sound/bgm.wav");
 	m_bgm->Play(true);
 }
-//NPC‚ğ‰Šú‰»B
+//NPCã‚’åˆæœŸåŒ–ã€‚
 void Game::InitNpc()
 {
 	
-	//NPC‚Ì”z’uî•ñ‚ğƒ[ƒhB
-	CLocData locData;
+	//NPCã®é…ç½®æƒ…å ±ã‚’ãƒ­ãƒ¼ãƒ‰ã€‚
+	/*CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
 
-	//”z’u‚³‚ê‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg‚É‘Î‚µ‚ÄƒNƒGƒŠ‚ğs‚¤B
+	//é…ç½®ã•ã‚Œã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¯¾ã—ã¦ã‚¯ã‚¨ãƒªã‚’è¡Œã†ã€‚
 	using NpcRenderPair = std::pair<NpcRender*, int>;
 	std::map<std::wstring, NpcRenderPair> npcMap;
 	locData.QueryLocObject([&](const auto& objData) {
@@ -84,42 +85,43 @@ void Game::InitNpc()
 		swprintf(modelFullPath, L"modelData/%ls.cmo", modelName);
 		auto it = npcMap.find(modelFullPath);
 		if (it == npcMap.end()) {
-			//V‹K
+			//æ–°è¦
 			NpcRender* npcRender = NewGO<NpcRender>(0);
 			npc->m_npcRender = npcRender;
 			npcMap.insert({ modelFullPath, { npcRender, 1 } });
 		}
 		else {
-			//d•¡B
+			//é‡è¤‡ã€‚
 			it->second.second++;
 			npc->m_npcRender = it->second.first;
 		}
 	});
-	//NPCƒŒƒ“ƒ_ƒ‰[‚ğ‰Šú‰»‚·‚éB
+	//NPCãƒ¬ãƒ³ãƒ€ãƒ©ãƒ¼ã‚’åˆæœŸåŒ–ã™ã‚‹ã€‚
 	for (auto npcRenderPair : npcMap) {
 		const std::wstring& modelPath = npcRenderPair.first;
 		auto numInstance = npcRenderPair.second.second;
 		
 		npcRenderPair.second.first->Init(numInstance, modelPath.c_str());
-	}
+	}*/
 	
 }
 bool Game::Start()
 {
-	m_mikyan = NewGO<Mikyan>(0, "‚İ‚«‚á‚ñ");
+	m_mikyan = NewGO<Mikyan>(0, "ã¿ãã‚ƒã‚“");
 	m_camera = NewGO<AppCamera>(0);
 	m_ground = NewGO<Ground>(0);
 	m_sky = NewGO<Sky>(0);
 	m_counter = NewGO<Counter>(0);
+	m_usagi = NewGO<Usagi>(0, "ğŸ‡");
 	m_mikyanWindow = NewGO<MikyanWindow>(0);
 
-	//ƒ‰ƒCƒg‚Ì‰Šú‰»B
+	//ãƒ©ã‚¤ãƒˆã®åˆæœŸåŒ–ã€‚
 	InitLight();
-	//NPC‚Ì‰Šú‰»B
+	//NPCã®åˆæœŸåŒ–ã€‚
 	InitNpc();
 	GraphicsEngine().GetTonemap().Reset(1.0f);
-#if 0 // ‚¿‚å‚Á‚Æ••ˆóB
-	//ƒ}ƒbƒvƒ`ƒbƒv‚ğ\’z
+#if 0 // ã¡ã‚‡ã£ã¨å°å°ã€‚
+	//ãƒãƒƒãƒ—ãƒãƒƒãƒ—ã‚’æ§‹ç¯‰
 	CLocData mapLocData;
 	mapLocData.Load(L"locData/mapLoc.tks");
 	for (int i = 0; i < mapLocData.GetNumObject(); i++) {
@@ -136,7 +138,7 @@ void Game::Update()
 #if BUILD_LEVEL != BUILD_LEVEL_MASTER
 	if (Pad(0).IsPress(enButtonRight) == true) {
 #else
-	//ƒ}ƒXƒ^[ƒrƒ‹ƒh‚Å‚ÍAƒL[‰Ÿ‚µ‚Á‚Ï‚È‚µ‚Å‚ÍƒJƒEƒ“ƒg‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚éB
+	//ãƒã‚¹ã‚¿ãƒ¼ãƒ“ãƒ«ãƒ‰ã§ã¯ã€ã‚­ãƒ¼æŠ¼ã—ã£ã±ãªã—ã§ã¯ã‚«ã‚¦ãƒ³ãƒˆã§ããªã„ã‚ˆã†ã«ã™ã‚‹ã€‚
 	if (Pad(0).IsTrigger(enButtonRight) == true) {
 #endif
 		for (auto& listener : m_countUpListener) {

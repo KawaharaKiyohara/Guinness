@@ -11,6 +11,7 @@ class Npc;
 class Counter;
 class NpcRender;
 class MikyanWindow;
+class Usagi;
 
 class Game : public IGameObject
 {
@@ -35,6 +36,7 @@ public:
 	AppCamera* m_camera = nullptr;	//カメラ。
 	Ground* m_ground = nullptr;		//地面。
 	Sky* m_sky = nullptr;			//空。
+	Usagi* m_usagi = nullptr;       //ウサギ。
 	MikyanWindow* m_mikyanWindow = nullptr;	//みきゃんを移す小窓。
 	std::vector<prefab::CDirectionLight*> m_lights;	//ｌｉｇｈｔ。
 	std::vector<Npc*> m_npc;		//NPC;

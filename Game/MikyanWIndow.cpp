@@ -1,6 +1,7 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "MikyanWIndow.h"
 #include "Mikyan.h"
+#include "Usagi.h"
 
 MikyanWindow::MikyanWindow()
 {
@@ -44,7 +45,7 @@ bool MikyanWindow::Start()
 	m_spriteRender->SetPivot({ 1.0f, 0.0f });
 	m_spriteRender->SetPosition({ 640, -360, 0.0f });
 	
-	m_mikyan = FindGO<Mikyan>("‚İ‚«‚á‚ñ");
+	m_mikyan = FindGO<Mikyan>("ã¿ãã‚ƒã‚“");
 	m_psShader.Load("shader/model.fx", "PS2DMikyan", CShader::EnType::PS);
 	return true;
 }
@@ -55,7 +56,8 @@ void MikyanWindow::Render(CRenderContext& rc)
 {
 	GraphicsEngine().BeginGPUEvent(L"MikyanWindow::Render");
 
-	//‚İ‚«‚á‚ñ‚ğƒIƒtƒXƒNƒŠ[ƒ“ƒŒƒ“ƒ_ƒŠƒ“ƒOB
+	//ã¿ãã‚ƒã‚“ã¨ã†ã•ãã‚’ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã€‚
+	CSkinModel& uModel = FindGO<Usagi>("ğŸ‡")->skinModelRender->GetSkinModel();
 	CSkinModel& model = m_mikyan->skinModelRender->GetSkinModel();
 	CVector3 target = m_mikyan->position;
 	target.z -= 25.0f;
@@ -66,10 +68,10 @@ void MikyanWindow::Render(CRenderContext& rc)
 	pos.x -= 250.0f;
 	m_mikyanCamera.SetPosition(pos);
 	m_mikyanCamera.SetNear(0.1f);
-	m_mikyanCamera.SetFar(500.0f);
+	m_mikyanCamera.SetFar(5000.0f);
 	m_mikyanCamera.SetAspect(1.0f);
 	m_mikyanCamera.Update();
-	//ƒŒƒ“ƒ_ƒŠƒ“ƒOƒ^[ƒQƒbƒg‚ğƒNƒŠƒA
+	//ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚¯ãƒªã‚¢
 	CRenderTarget* oldRenderTargets[MRT_MAX];
 	unsigned int numRenderTargetViews;
 	rc.OMGetRenderTargets(numRenderTargetViews, oldRenderTargets);
@@ -83,20 +85,25 @@ void MikyanWindow::Render(CRenderContext& rc)
 	rc.RSSetViewport(0.0f, 0.0f, (float)m_renderTarget.GetWidth(), (float)m_renderTarget.GetHeight());
 
 	rc.ClearRenderTargetView(0, clearColor);
-	//2D‚İ‚«‚á‚ñ—p‚ÌƒVƒF[ƒ_[‚ÉØ‚è‘Ö‚¦‚éB
+	//2Dã¿ãã‚ƒã‚“ç”¨ã®ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã«åˆ‡ã‚Šæ›¿ãˆã‚‹ã€‚
 	model.FindMaterial([&](auto mat) {
 		mat->SetRender3DModelPSShader(m_psShader);
 	});
+	uModel.FindMaterial([&](auto mat) {
+		mat->SetRender3DModelPSShader(m_psShader);
+	});
 	model.Draw(rc, m_mikyanCamera.GetViewMatrix(), m_mikyanCamera.GetProjectionMatrix());
-	
-	//ƒŒƒ“ƒ_ƒŠƒ“ƒOƒ^[ƒQƒbƒg‚ğ‚à‚Ç‚·B
+	uModel.Draw(rc, m_mikyanCamera.GetViewMatrix(), m_mikyanCamera.GetProjectionMatrix());
+	//ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚‚ã©ã™ã€‚
 	rc.OMSetRenderTargets(numRenderTargetViews, oldRenderTargets);
 	rc.RSSetViewport(0.0f, 0.0f, (float)oldRenderTargets[0]->GetWidth(), (float)oldRenderTargets[0]->GetHeight());
 
-	//ƒVƒF[ƒ_[‚ğ–ß‚·B
+	//ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚’æˆ»ã™ã€‚
 	model.FindMaterial([&](auto mat) {
 		mat->SetRender3DModelDefaultShader();
 	});
-
+	uModel.FindMaterial([&](auto mat) {
+		mat->SetRender3DModelDefaultShader();
+	});
 	GraphicsEngine().EndGPUEvent();
 }
