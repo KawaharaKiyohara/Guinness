@@ -55,9 +55,14 @@ void Usagi::OnStateStop()
 void Usagi::OnStateJump()
 {
 	
-	//u_position.x += 2.0f * u_moveDir;
+	u_position.x += 2.0f * u_moveDir;
 	if (u_position.y < 0.1f) {
 		u_moveSpeed = 5.0f;
+		u_jump++;
+	}
+	if (u_jump == 1) {
+		u_moveDir *= -1;
+		u_jump = 0;
 	}
 	
 	skinModelRender->SetPosition(u_position);//ç¿ïW
@@ -113,21 +118,6 @@ void Usagi::Update()
 			u_timer = 0.0f;
 		}
 	}
-	/*	Mikyan* mikyan = FindGO<Mikyan>("Ç›Ç´Ç·ÇÒ");
-		CVector3 v = mikyan->position - u_position;
-		v.Normalize();
-		CVector3 diff = mikyan->position - u_position;
-		if (diff.Length() < 4.0f) {
-			u_position = mikyan->position;
-		}else if (diff.Length() < 200.0f) {
-			u_position += v * 4;
-		}
-		else {
-			u_position += v * 10;
-		}
-		
-
-		skinModelRender->SetPosition(u_position);//ç¿ïW
-	*/
+	
 }
 

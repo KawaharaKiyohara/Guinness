@@ -21,6 +21,7 @@ public:
 	CVector3 u_initPosition;
 	int u_moveDir = -1;
 	float u_moveSpeed = 0.0f;
+	int u_jump = 0;
 	float u_timer = 0.0f;	//状態切り替えに使用するタイマー。単位は秒。
 };
 
