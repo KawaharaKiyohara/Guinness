@@ -70,7 +70,7 @@ void Game::InitNpc()
 {
 	
 	//NPCの配置情報をロード。
-	/*CLocData locData;
+	CLocData locData;
 	locData.Load(L"locData/npcLoc.tks");
 
 	//配置されているオブジェクトに対してクエリを行う。
@@ -103,7 +103,7 @@ void Game::InitNpc()
 		auto numInstance = npcRenderPair.second.second;
 		
 		npcRenderPair.second.first->Init(numInstance, modelPath.c_str());
-	}*/
+	}
 	
 }
 bool Game::Start()
