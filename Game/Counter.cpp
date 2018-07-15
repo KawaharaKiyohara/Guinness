@@ -6,6 +6,12 @@
 #include "Game.h"
 #include "EffectPlay.h"
 
+#if BUILD_LEVEL != BUILD_LEVEL_MASTER
+//#define USE_SAVE_DATA		//有効でセーブデータを使う
+#else
+#define USE_SAVE_DATA		//有効でセーブデータを使う。マスタービルドでは必ず有効になる。
+#endif
+
 Counter::Counter()
 {
 }
@@ -21,6 +27,7 @@ bool Counter::Start()
 		OnCountup();
 	});
 	m_font.SetShadowParam(true, 3.0f, CVector4::Black);
+#ifdef USE_SAVE_DATA
 	//ここでセーブデータを読み込んで、m_countに反映させる。
 	FILE *fp;
 	fp = fopen("test.txt", "r");
@@ -29,7 +36,7 @@ bool Counter::Start()
 		fclose(fp);
 		m_count = atoi(hoge);
 	}
-
+#endif
 	return true;
 }
 void Counter::Update()

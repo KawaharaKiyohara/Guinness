@@ -138,6 +138,12 @@
     <ClCompile Include="MapChip.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="NpcNormalAction_LRUP.cpp">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClCompile>
+    <ClCompile Include="Usagi.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -216,6 +222,12 @@
     <ClInclude Include="MapChip.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="NpcNormalAction_LRUP.h">
+      <Filter>Src\NPC\NormalAction</Filter>
+    </ClInclude>
+    <ClInclude Include="Usagi.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -285,6 +297,9 @@
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\npc\man-native_T.FBX">
       <Filter>Assets\modelData\npc</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\usagigi.FBX">
+      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
@@ -405,7 +420,6 @@
     <CustomBuild Include="Assets\sound\bgm.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
-    <CustomBuild Include="Assets\sound\touch_00.wav" />
     <CustomBuild Include="Assets\effect\hanabi.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
@@ -417,6 +431,9 @@
     </CustomBuild>
     <CustomBuild Include="Assets\effect\hanabiUp.efk">
       <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\touch_00.wav">
+      <Filter>Assets\sound</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
